@@ -1,24 +1,13 @@
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-}
-
-h1 {
+/*carousel*/
+.h1-main {
   text-align: center;
-  margin-bottom: 1.5em;
-}
-
-h2 {
-    text-align: center;
-    color: #555;
-  margin-bottom: 0;
+  margin-bottom: -25px;
 }
 
 // Carousel configuration parameters
-$item-width: 40%; // Now we can use percentages!
+$item-width: 55%; // Now we can use percentages!
 $item-separation: 0px; // This now is set with Js
-$viewer-distance: 500px;
+$viewer-distance: 800px;
 
 .carousel {
     padding: 20px;
@@ -34,29 +23,33 @@ $viewer-distance: 500px;
     }
 
     figure {
-        margin: 0;
+        margin: {
+          top: 25px;
+          bottom: 20px;
+        }
 
         width: $item-width;
         transform-style: preserve-3d;
-        transition: transform 0.5s;
+        transition: transform 0.7s;
 
-        img {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 0 $item-separation / 2;
 
-            &:not(:first-of-type) {
-                position: absolute;
-                left: 0;
-                top: 0;
-            }
+    }
+    #square {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 $item-separation / 2;
+
+        &:not(:first-of-type) {
+            position: absolute;
+            left: 0;
+            top: 0;
         }
     }
 
     nav {
         display: flex;
         justify-content: center;
-        margin: 20px 0 0;
+        margin: 0px 0 0;
 
         button {
             flex: 0 0 auto;
@@ -64,12 +57,14 @@ $viewer-distance: 500px;
 
             cursor: pointer;
 
-            color: #333;
-            background: none;
-            border: 1px solid;
+            color: #FFFFFF;
             letter-spacing: 1px;
-            padding: 5px 10px;
+            padding: 10px 50px;
+            font-size: 20px;
         }
     }
 
+}
+.container-bg {
+  background-color: #fff;
 }
