@@ -3,6 +3,8 @@ class Restaurant < ApplicationRecord
   friendly_id :name, use: :slugged
 
   belongs_to :category
+  belongs_to :user
+  has_many :restaurant_photos
   
   geocoded_by :address do |obj,results|
     obj.send :ensure_geocoding, results.first
