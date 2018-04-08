@@ -1,17 +1,18 @@
 <h1 class="h1-main">Where to?</h1>
 <div class="carousel container-fluid" data-gap="20" data-bfc>
     <figure>
+      <% @restaurants.each do |restaurant| %>
         <div class="container-fluid container-bg" id="square">
           <div class="row">
-            <div class="col-sm-5"><h1>BIGG's Diner</h1></div>
-            <div class="col-sm-4"><h5><strong>OPEN HOURS: 8 AM to 9PM</strong></h5></div>
+            <div class="col-sm-5"><h1><%=restaurant.name%></h1></div>
+            <div class="col-sm-4"><h5><strong>OPEN HOURS: <%=restaurant.open_hours %></strong></h5></div>
             <div class="col-sm-3"><h5><strong>PHONE: (054) 473 3333</strong></h5></div>
           </div>
           <div class="row">
-            <div class="col-sm-12"><h4>J Miranda Ave, Brgy. Concepcion Pequeña, Naga, 4400 Camarines Sur</h4></div>
+            <div class="col-sm-12"><h4><%=restaurant.address%></h4></div>
           <div class="row">
           <div class="col-sm-7">
-             <img src="http://via.placeholder.com/1000x600" class="img-rounded img-responsive" alt="eateryimage">
+             <img src="<%=restaurant.primary_photo_url%>" height="500" width="500"class="img-responsive" alt="eateryimage">
           </div>
           <div class="col-sm-5">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7755.007463245157!2d123.18822397421941!3d13.627093888554436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f3347e8722b7%3A0x3eab7b3548ac1f8a!2sBIGG&#39;S+Diner!5e0!3m2!1sen!2sph!4v1517658545674" class="img-rounded img-responsive" style="border:0" allowfullscreen></iframe>
@@ -23,221 +24,22 @@
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star"></span>
               <span>4.0</span>
-              <h4>4 Reviews</h4>
-
+              <br><br>
+              <h5>Price Range:<h5> <h6><%=restaurant.price_range%></h6>
+              <br><br>
+              <h6>4 Reviews</h6>
             </div>
           </div>
           </div>
         </div>
       </div>
-      <div class="container-fluid container-bg" id="square">
-        <div class="row">
-          <div class="col-sm-5"><h1>BIGG's Diner</h1></div>
-          <div class="col-sm-4"><h5><strong>OPEN HOURS: 8 AM to 9PM</strong></h5></div>
-          <div class="col-sm-3"><h5><strong>PHONE: (054) 473 3333</strong></h5></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12"><h4>J Miranda Ave, Brgy. Concepcion Pequeña, Naga, 4400 Camarines Sur</h4></div>
-        <div class="row">
-        <div class="col-sm-7">
-           <img src="http://via.placeholder.com/1000x600" class="img-rounded img-responsive" alt="eateryimage">
-        </div>
-        <div class="col-sm-5">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7755.007463245157!2d123.18822397421941!3d13.627093888554436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f3347e8722b7%3A0x3eab7b3548ac1f8a!2sBIGG&#39;S+Diner!5e0!3m2!1sen!2sph!4v1517658545674" class="img-rounded img-responsive" style="border:0" allowfullscreen></iframe>
-          <br>
-          <div class="star-size">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span>4.0</span>
-            <h4>4 Reviews</h4>
-
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
-      <div class="container-fluid container-bg" id="square">
-        <div class="row">
-          <div class="col-sm-5"><h1>BIGG's Diner</h1></div>
-          <div class="col-sm-4"><h5><strong>OPEN HOURS: 8 AM to 9PM</strong></h5></div>
-          <div class="col-sm-3"><h5><strong>PHONE: (054) 473 3333</strong></h5></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12"><h4>J Miranda Ave, Brgy. Concepcion Pequeña, Naga, 4400 Camarines Sur</h4></div>
-        <div class="row">
-        <div class="col-sm-7">
-           <img src="http://via.placeholder.com/1000x600" class="img-rounded img-responsive" alt="eateryimage">
-        </div>
-        <div class="col-sm-5">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7755.007463245157!2d123.18822397421941!3d13.627093888554436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f3347e8722b7%3A0x3eab7b3548ac1f8a!2sBIGG&#39;S+Diner!5e0!3m2!1sen!2sph!4v1517658545674" class="img-rounded img-responsive" style="border:0" allowfullscreen></iframe>
-          <br>
-          <div class="star-size">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span>4.0</span>
-            <h4>4 Reviews</h4>
-
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
-      <div class="container-fluid container-bg" id="square">
-        <div class="row">
-          <div class="col-sm-5"><h1>BIGG's Diner</h1></div>
-          <div class="col-sm-4"><h5><strong>OPEN HOURS: 8 AM to 9PM</strong></h5></div>
-          <div class="col-sm-3"><h5><strong>PHONE: (054) 473 3333</strong></h5></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12"><h4>J Miranda Ave, Brgy. Concepcion Pequeña, Naga, 4400 Camarines Sur</h4></div>
-        <div class="row">
-        <div class="col-sm-7">
-           <img src="http://via.placeholder.com/1000x600" class="img-rounded img-responsive" alt="eateryimage">
-        </div>
-        <div class="col-sm-5">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7755.007463245157!2d123.18822397421941!3d13.627093888554436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f3347e8722b7%3A0x3eab7b3548ac1f8a!2sBIGG&#39;S+Diner!5e0!3m2!1sen!2sph!4v1517658545674" class="img-rounded img-responsive" style="border:0" allowfullscreen></iframe>
-          <br>
-          <div class="star-size">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span>4.0</span>
-            <h4>4 Reviews</h4>
-
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
-      <div class="container-fluid container-bg" id="square">
-        <div class="row">
-          <div class="col-sm-5"><h1>BIGG's Diner</h1></div>
-          <div class="col-sm-4"><h5><strong>OPEN HOURS: 8 AM to 9PM</strong></h5></div>
-          <div class="col-sm-3"><h5><strong>PHONE: (054) 473 3333</strong></h5></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12"><h4>J Miranda Ave, Brgy. Concepcion Pequeña, Naga, 4400 Camarines Sur</h4></div>
-        <div class="row">
-        <div class="col-sm-7">
-           <img src="http://via.placeholder.com/1000x600" class="img-rounded img-responsive" alt="eateryimage">
-        </div>
-        <div class="col-sm-5">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7755.007463245157!2d123.18822397421941!3d13.627093888554436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f3347e8722b7%3A0x3eab7b3548ac1f8a!2sBIGG&#39;S+Diner!5e0!3m2!1sen!2sph!4v1517658545674" class="img-rounded img-responsive" style="border:0" allowfullscreen></iframe>
-          <br>
-          <div class="star-size">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span>4.0</span>
-            <h4>4 Reviews</h4>
-
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
-      <div class="container-fluid container-bg" id="square">
-        <div class="row">
-          <div class="col-sm-5"><h1>BIGG's Diner</h1></div>
-          <div class="col-sm-4"><h5><strong>OPEN HOURS: 8 AM to 9PM</strong></h5></div>
-          <div class="col-sm-3"><h5><strong>PHONE: (054) 473 3333</strong></h5></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12"><h4>J Miranda Ave, Brgy. Concepcion Pequeña, Naga, 4400 Camarines Sur</h4></div>
-        <div class="row">
-        <div class="col-sm-7">
-           <img src="http://via.placeholder.com/1000x600" class="img-rounded img-responsive" alt="eateryimage">
-        </div>
-        <div class="col-sm-5">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7755.007463245157!2d123.18822397421941!3d13.627093888554436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f3347e8722b7%3A0x3eab7b3548ac1f8a!2sBIGG&#39;S+Diner!5e0!3m2!1sen!2sph!4v1517658545674" class="img-rounded img-responsive" style="border:0" allowfullscreen></iframe>
-          <br>
-          <div class="star-size">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span>4.0</span>
-            <h4>4 Reviews</h4>
-
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
-      <div class="container-fluid container-bg" id="square">
-        <div class="row">
-          <div class="col-sm-5"><h1>BIGG's Diner</h1></div>
-          <div class="col-sm-4"><h5><strong>OPEN HOURS: 8 AM to 9PM</strong></h5></div>
-          <div class="col-sm-3"><h5><strong>PHONE: (054) 473 3333</strong></h5></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12"><h4>J Miranda Ave, Brgy. Concepcion Pequeña, Naga, 4400 Camarines Sur</h4></div>
-        <div class="row">
-        <div class="col-sm-7">
-           <img src="http://via.placeholder.com/1000x600" class="img-rounded img-responsive" alt="eateryimage">
-        </div>
-        <div class="col-sm-5">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7755.007463245157!2d123.18822397421941!3d13.627093888554436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f3347e8722b7%3A0x3eab7b3548ac1f8a!2sBIGG&#39;S+Diner!5e0!3m2!1sen!2sph!4v1517658545674" class="img-rounded img-responsive" style="border:0" allowfullscreen></iframe>
-          <br>
-          <div class="star-size">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span>4.0</span>
-            <h4>4 Reviews</h4>
-
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
-      <div class="container-fluid container-bg" id="square">
-        <div class="row">
-          <div class="col-sm-5"><h1>BIGG's Diner</h1></div>
-          <div class="col-sm-4"><h5><strong>OPEN HOURS: 8 AM to 9PM</strong></h5></div>
-          <div class="col-sm-3"><h5><strong>PHONE: (054) 473 3333</strong></h5></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12"><h4>J Miranda Ave, Brgy. Concepcion Pequeña, Naga, 4400 Camarines Sur</h4></div>
-        <div class="row">
-        <div class="col-sm-7">
-           <img src="http://via.placeholder.com/1000x600" class="img-rounded img-responsive" alt="eateryimage">
-        </div>
-        <div class="col-sm-5">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7755.007463245157!2d123.18822397421941!3d13.627093888554436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f3347e8722b7%3A0x3eab7b3548ac1f8a!2sBIGG&#39;S+Diner!5e0!3m2!1sen!2sph!4v1517658545674" class="img-rounded img-responsive" style="border:0" allowfullscreen></iframe>
-          <br>
-          <div class="star-size">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span>4.0</span>
-            <h4>4 Reviews</h4>
-
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
+      <% end %>
     </figure>
     <nav>
         <button class=" nav btn btn-danger next">Spin</button>
     </nav>
 </div>
+
 <script>
 /*carousel*/
 window.addEventListener('load', () => {
