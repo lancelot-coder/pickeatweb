@@ -89,4 +89,6 @@ if Restaurant.all.empty?
     restaurant_photo = RestaurantPhoto.create(photo: URI.parse("https://picsum.photos/200/?random").open, primary: is_primary, restaurant_id: restaurant.id)
     restaurant.restaurant_photos << restaurant_photo
   end
-endAdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+end
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
