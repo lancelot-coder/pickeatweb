@@ -7,5 +7,28 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 %w(italian japanese korean filipino american chinese taiwanese vietnamese).each do |category|
-  Category.where(title: category).first_or_create
+  Category.where(title: category, published: true).first_or_create
+end
+
+if Restaurant.all.empty?
+  user = User.where(email: 'nymphareyes@gmail.com').first
+  if user.nil?
+    user = User.create(email: 'nymphareyes@gmail.com', password: 'password', password_confirmation: 'password', first_name: 'Nympha', last_name: 'Reyes')
+  end
+
+  category = Category.find_by(title: 'filipino')
+  Restaurant.create(
+    name: "Prime Food Enterprise",
+    category_id: category.id,
+    published: true,
+    street_address: "Balatas Road",
+    city: "Naga City",
+    zip: "4400",
+    province: "Camarines Sur",
+    country: "Philippines",
+    price_range: "PhP20.00 - PhP30.00",
+    phone: "09085404643",
+    open_hours: "8AM - 10PM",
+    user_id: user.id
+  )
 end
