@@ -32,3 +32,4 @@ if Restaurant.all.empty?
     user_id: user.id
   )
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
