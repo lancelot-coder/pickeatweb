@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'team' => 'pages#team', as: 'team'
   get 'team-single' => 'pages#team-single', as: 'team-single'
   get 'contact' => 'pages#contact', as: 'contact'
-  root to: "pages#index"
+  root to: "home#index"
+
+  devise_for :users
 
 end

@@ -39,11 +39,16 @@
             <img src="images/logo.png" alt="User Photo">
             <span class="drop-arow"></span>
         </a>
-        <ul class="dropdown-menu user-drop">
-            <li><a href="#"><i class="fa fa-user"></i>My Profile</a></li>
-            <li><a href="#"><i class="fa fa-list"></i>My Properties</a></li>
-            <li><a href="#"><i class="fa fa-sign-out"></i>Logout</a></li>
-        </ul>
+        <% if user_signed_in? %>
+            <ul class="dropdown-menu user-drop">
+                <li><%=link_to 'Logout', destroy_user_session_path %></li>
+            </ul>
+        <% else %>
+            <ul class="dropdown-menu user-drop">
+                <li><%=link_to 'Log In', new_user_session_path %></li>
+                <li><%=link_to 'Sign Up', new_user_registration_path%></li>
+            </ul>
+        <% end %>
     </div>
 
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobile-menu" aria-expanded="false">
