@@ -349,7 +349,7 @@ header .user-drop li i { margin-right: 20px; }
 .personal-agent article h2 { font-size: 30px; font-weight: 600; color: #fff; margin-bottom: 15px; text-transform: uppercase; }
 .personal-agent article p { font-size: 16px; color: #ffffff; line-height: 28px; display: block; margin-bottom: 35px; }
 
-.history { margin: 80px 0 120px; background: url(../images/banner-history.png) no-repeat -226px 10px; background-size: cover; padding: 85px 0; }
+.history { margin: 80px 0 120px; background: asset-path('banner-history.png') no-repeat -226px 10px; background-size: cover; padding: 85px 0; }
 .history h3 { font-size: 30px; color: #212121; text-transform: uppercase; margin-bottom: 25px; }
 .history p { font-size: 16px; color: #727272; line-height: 28px; margin-bottom: 30px; }
 
@@ -490,7 +490,7 @@ footer ul li a:hover { color: #fff; }
 .page-contents p+p:last-child { margin: 0; }
 .page-contents figure { margin: 0 0 40px; }
 .page-contents figure a { overflow: hidden; position: relative; display: block; line-height: 0; }
-.page-contents figure a .overlay { opacity: 0; position: absolute; left: 20px; top: 20px; width: calc(100% - 40px); height: calc(100% - 40px); background: rgba(255,235,59,0.5) url("../images/zoom.png") center center no-repeat;
+.page-contents figure a .overlay { opacity: 0; position: absolute; left: 20px; top: 20px; width: calc(100% - 40px); height: calc(100% - 40px); background: rgba(255,235,59,0.5) asset-path("zoom.png") center center no-repeat;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -705,7 +705,7 @@ footer ul li a:hover { color: #fff; }
     -moz-transform:scale(1.1);
     -o-transform:scale(1.1);
 }
-.grid-item a .overlay { opacity: 0; position: absolute; left: 20px; top: 20px; width: calc(100% - 40px); height: calc(100% - 40px); background: rgba(255,235,59,0.5) url("../images/zoom.png") center center no-repeat;
+.grid-item a .overlay { opacity: 0; position: absolute; left: 20px; top: 20px; width: calc(100% - 40px); height: calc(100% - 40px); background: rgba(255,235,59,0.5) asset-path("zoom.png") center center no-repeat;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
