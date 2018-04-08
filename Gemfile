@@ -19,6 +19,7 @@ gem 'geocoder'
 gem 'friendly_id', '~> 5.1.0'
 gem "paperclip", "~> 6.0.0"
 gem 'activeadmin'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -26,6 +27,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry-rails'
 end
 
 group :development do
