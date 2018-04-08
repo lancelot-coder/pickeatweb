@@ -29,11 +29,11 @@
         <figure>
           <img src="<%=@restaurant.primary_photo_url%>" alt="Image" class="img-responsive">
         </figure>
-        <% @restaurant.restaurant_photos.not_primary.sample(3).each do |restaurant_photo| %>
-          <div class="thumbnails">
-            <a href="#"><img src="<%=restaurant_photo.photo.url%>" alt="Thumbnils" class="img-responsive"></a>
-          </div>
-        <% end %>
+        <div class="thumbnails">
+          <% @restaurant.restaurant_photos.not_primary.sample(3).each do |restaurant_photo| %>
+            <img src="<%=restaurant_photo.photo.url%>" alt="Thumbnils" class="img-responsive">
+          <% end %>
+        </div>
       </div>
       <!-- RESTAURANT SLIDER -->
 

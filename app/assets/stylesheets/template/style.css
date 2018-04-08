@@ -811,6 +811,7 @@ footer ul li a:hover { color: #fff; }
 }
 .property-slider .thumbnails a:last-child { margin-right: 0; }
 .property-slider .thumbnails a:hover { opacity: 0.8; }
+.property-slider .thumbnails img { display: inline-block; margin-right: 14px; }
 
 .property-data { margin-bottom: 70px; }
 
