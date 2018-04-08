@@ -5,6 +5,8 @@ class Restaurant < ApplicationRecord
   belongs_to :category
   belongs_to :user
   has_many :restaurant_photos
+
+  scope :published, -> { where(published: true) }
   
   geocoded_by :address do |obj,results|
     obj.send :ensure_geocoding, results.first
@@ -30,5 +32,9 @@ class Restaurant < ApplicationRecord
 
   def assign_address
     self.address = [street_address, city, province, country, zip].compact.join(', ')
+  end
+
+  def primary_photo_url
+    restaurant_photos.where(primary: true).first.photo.url
   end
 end

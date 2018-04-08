@@ -1,0 +1,115 @@
+<div class="full-width page-wrap properties-page">
+  <!-- BREADCRUMBS-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumbs">
+          <a href="<%= root_path %>">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Eatery</span>
+        </div>
+        <h2 class="page-title">All Eateries</h2>
+      </div>
+    </div>
+  </div>
+  <!-- BREADCRUMBS -->
+
+  <div class="container">
+    <div class="row">
+      <!-- SIDEBAR -->
+      <aside class="col-md-4">
+
+        <div class="property-search">
+          <form action="#" method="get">
+
+            <select>
+              <option>Location</option>
+              <option>Magsaysay</option>
+              <option>Panganiban</option>
+              <option>Del Rosario</option>
+            </select>
+            <select>
+              <option>Category</option>
+              <option>Japanese</option>
+              <option>Filipino</option>
+              <option>American</option>
+              <option>Chinese</option>
+            </select>
+            <select>
+              <option>Type</option>
+              <option>Buy</option>
+              <option>Sell</option>
+              <option>Rent</option>
+            </select>
+
+            <hr>
+
+            <div class="buttons">
+              <button class="btn btn-danger"><i class="fa fa-search"></i>Search</button>
+              <button class="btn btn-clear">Clear</button>
+            </div>
+
+          </form>
+        </div>
+
+      </aside>
+      <!-- SIDEBAR -->
+
+      <div class="col-md-8">
+        <div class="row properties-grid">
+          <% @restaurants.in_groups_of(2).each do |restaurants| %>
+            <div class="row">
+              <% restaurants.each do |restaurant| %>
+                <% if restaurant.present? %>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="item">
+                      <div class="item-header clearfix">
+                        <h3><a href="#"><%=restaurant.name%></a></h3>
+                        <span class="favorite"><i class="fa fa-star"></i>4.5</span>
+                      </div>
+                      <figure>
+                        <img src="<%=restaurant.primary_photo_url%>" alt="" class="img-responsive">
+                        <div class="overlay">
+                          <a href="properties-single" class="btn btn-detail">Detail</a>
+                        </div>
+                      </figure>
+                      <div class="item-detail">
+                        <div class="left">
+                          <span class="place"><i class="fa fa-map-marker"></i><%=restaurant.address%></span>
+                        </div>
+                        <div class="right">
+                          <span class="area">distance</span>
+                          <span class="price">‎<%=restaurant.price_range%></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="pagination">
+          <a href="#" class="prev"><i class="fa fa-angle-left"></i>Previous</a>
+          <a href="#">1</a>
+          <span>2</span>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#" class="next">Next<i class="fa fa-angle-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PAGINATION -->
+
+</div>
