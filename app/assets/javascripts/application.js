@@ -11,15 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require template/jquery-1.11.3.min.js
-//= require template/jquery-ui.js
-//= require template/bootstrap.min.js
-//= require template/masonry.pkgd.min.js
-//= require template/jquery.flexslider-min.js
-//= require template/jquery.selectBox.min.js
-//= require template/icheck.js
-//= require template/counter.animation.js
-//= require template/jquery.appear.js
-//= require template/custom.js
-//= require template/jquery.cycle2.js
-//= require template/pace.js
+//= require jquery-1.11.3.min.js
+//= require jquery-ui.js
+//= require bootstrap.min.js
+//= require masonry.pkgd.min.js
+//= require jquery.flexslider-min.js
+//= require jquery.selectBox.min.js
+//= require icheck.js
+//= require counter.animation.js
+//= require jquery.appear.js
+//= require custom.js
+//= require jquery.cycle2.js
+//= require pace.js

@@ -157,8 +157,8 @@ header .user a:focus,
 header .user a:hover { text-decoration: none; }
 header .user img { margin-top: -3px; background: #fff; width: 30px; height: 30px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
 header .user:hover img { opacity: 0.5; }
-header .user .drop-arow { background: url(./drop-arrow.png) no-repeat top right; width: 12px; height: 7px; display: inline-block; }
-header .user:hover .drop-arow { background: url(./drop-arrow.png) no-repeat bottom right; }
+header .user .drop-arow { background: asset-path('drop-arrow.png') no-repeat top right; width: 12px; height: 7px; display: inline-block; }
+header .user:hover .drop-arow { background: asset-path('drop-arrow.png') no-repeat bottom right; }
 
 header .user-drop { right: -13px; left: inherit; top: 57px; }
 header .user-drop li i { margin-right: 20px; }
@@ -832,9 +832,9 @@ footer ul li a:hover { color: #fff; }
 
 /****************************************************************************
     Error Page
-****************************************************************************/
+********************************************f********************************/
 
-.error-page.page-wrap { background: url("../images/pattern2.jpg") repeat; text-align: center; min-height: 660px; padding-top: 140px; }
+.error-page.page-wrap { background: asset-path("pattern2.jpg") repeat; text-align: center; min-height: 660px; padding-top: 140px; }
 
 .error-page h4 { font-size: 100px; color: #212121; margin-bottom: 15px; }
 .error-page h4:after { width: 40px; height: 2px; content: ' '; background: #f44336; display: block; margin: 0 auto; }

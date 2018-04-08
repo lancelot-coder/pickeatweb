@@ -7,7 +7,7 @@
           <ul class="clearfix row">
               <li class="counter col-md-12 col-sm-12">
                 <div>
-                  <figure><img src="fact1.png" alt=""></figure>
+                  <figure><img src="<%=asset_url('fact1.png')%>" alt=""></figure>
                   <small>Eateries</small>
                   <span data-fact="1">0000</span>
                 </div>
@@ -22,30 +22,31 @@
 <!-- ITEMS GRID -->
 <div class="container">
   <div class="row">
-    <div class="col-md-4 col-sm-6">
-      <div class="item">
-        <div class="item-header clearfix">
-          <h3><a href="#">"Harvey's Bistro"</a></h3>
-          <span class="favorite"><i class="fa fa-star"></i>4.5</span>
-        </div>
-        <figure>
-          <img src="images/items/7.png" alt="" class="img-responsive">
-          <span class="label hot">Hot</span>
-          <div class="overlay">
-            <a href="properties-single" class="btn btn-detail">Detail</a>
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-md-4 col-sm-6">
+        <div class="item">
+          <div class="item-header clearfix">
+            <h3><a href="#"><%=restaurant.name%></a></h3>
+            <span class="favorite"><i class="fa fa-star"></i>4.5</span>
           </div>
-        </figure>
-        <div class="item-detail">
-          <div class="left">
-            <span class="place"><i class="fa fa-map-marker"></i>Concepcion Grande Naga City</span>
-          </div>
-            <div class="right">
-                <span class="area">distance</span>
-                <span class="price">‎₱ 200 - 500</span>
+          <figure>
+            <img src="<%=restaurant.primary_photo_url%>" alt="" class="img-responsive">
+            <div class="overlay">
+              <a href="properties-single" class="btn btn-detail">Detail</a>
             </div>
+          </figure>
+          <div class="item-detail">
+            <div class="left">
+              <span class="place"><i class="fa fa-map-marker"></i><%=restaurant.address%></span>
+            </div>
+              <div class="right">
+                  <span class="area">distance</span>
+                  <span class="price"><%=restaurant.name%></span>
+              </div>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 <!-- ITEMS GRID -->

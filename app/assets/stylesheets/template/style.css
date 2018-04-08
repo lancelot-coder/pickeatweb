@@ -157,8 +157,8 @@ header .user a:focus,
 header .user a:hover { text-decoration: none; }
 header .user img { margin-top: -3px; background: #fff; width: 30px; height: 30px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
 header .user:hover img { opacity: 0.5; }
-header .user .drop-arow { background: url(./drop-arrow.png) no-repeat top right; width: 12px; height: 7px; display: inline-block; }
-header .user:hover .drop-arow { background: url(./drop-arrow.png) no-repeat bottom right; }
+header .user .drop-arow { background: asset-path('drop-arrow.png') no-repeat top right; width: 12px; height: 7px; display: inline-block; }
+header .user:hover .drop-arow { background: asset-path('drop-arrow.png') no-repeat bottom right; }
 
 header .user-drop { right: -13px; left: inherit; top: 57px; }
 header .user-drop li i { margin-right: 20px; }
@@ -282,7 +282,7 @@ header .user-drop li i { margin-right: 20px; }
 .item .item-detail .bed { background: url(../images/icon-bed.png) no-repeat left;}
 .item .item-detail .garage { background: url(../images/icon-garage.png) no-repeat left; }
 .item .item-detail .gym { background: url(../images/icon-gym.png) no-repeat left; }
-.item .item-detail .area { background: url(../images/icon-area.png) no-repeat left; margin-bottom: 10px; display: block; margin-right: 0; }
+.item .item-detail .area { background: asset-path('icon-area.png') no-repeat left; margin-bottom: 10px; display: block; margin-right: 0; }
 .item .item-detail .price { padding-left: 0; font: 700 14px 'Ubuntu', Arial, Helvetica, sans-serif; color: #212121; margin-right: 0;}
 
 
@@ -826,7 +826,7 @@ footer ul li a:hover { color: #fff; }
 .property-data .prop-features.prop-before span { float: none; width: 100%; }
 
 .property-data > ul { overflow: hidden; }
-.property-data > ul li { font-weight: 300; color: #727272; background: url("../images/tick.png") 0 -25px no-repeat; padding-left: 20px; text-transform: uppercase; margin-bottom: 15px; width: 50%; float: left; }
+.property-data > ul li { font-weight: 300; color: #727272; background: url("tick.png") 0 -25px no-repeat; padding-left: 20px; text-transform: uppercase; margin-bottom: 15px; width: 50%; float: left; }
 .property-data > ul li:last-child { margin: 0; }
 
 
@@ -834,7 +834,7 @@ footer ul li a:hover { color: #fff; }
     Error Page
 ****************************************************************************/
 
-.error-page.page-wrap { background: url("../images/pattern2.jpg") repeat; text-align: center; min-height: 660px; padding-top: 140px; }
+.error-page.page-wrap { background: asset-path("pattern2.jpg") repeat; text-align: center; min-height: 660px; padding-top: 140px; }
 
 .error-page h4 { font-size: 100px; color: #212121; margin-bottom: 15px; }
 .error-page h4:after { width: 40px; height: 2px; content: ' '; background: #f44336; display: block; margin: 0 auto; }
