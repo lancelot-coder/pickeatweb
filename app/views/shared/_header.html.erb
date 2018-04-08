@@ -41,7 +41,7 @@
         </a>
         <% if user_signed_in? %>
             <ul class="dropdown-menu user-drop">
-                <li><%=link_to 'Logout', destroy_user_session_path %></li>
+                <li><%=link_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }%></li>
             </ul>
         <% else %>
             <ul class="dropdown-menu user-drop">
