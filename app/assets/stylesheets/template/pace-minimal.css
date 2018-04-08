@@ -18,7 +18,7 @@
     top: 30%;
     position: absolute;
     padding-left: 50px;
-    background: url("./logo.png") left center no-repeat;
+    background: url("/logo.png") left center no-repeat;
     text-transform: uppercase;
     color: #212121;
     font-weight: 900;

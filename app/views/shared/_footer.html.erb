@@ -18,12 +18,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5 copy-right">
-                <p><img src="images/footer-logo.png" alt="Logo" class="img-responsive"> &copy; 2018 PICK EAT — Where finding food matters</p>
+                <p><img src="<%=asset_url('footer-logo.png')%>" alt="Logo" class="img-responsive"> &copy; 2018 PICK EAT — Where finding food matters</p>
             </div>
             <div class="col-md-7">
                 <ul>
                     <li><a href="<%= root_path %>">Home</a></li>
-                    <li><a href="properties-grid">Eatery</a></li>
+                    <li><a href="<%= restaurants_path %>">Eatery</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="team">Team</a></li>
                     <li><a href="contact">Contact Us</a></li>
