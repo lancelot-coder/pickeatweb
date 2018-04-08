@@ -1,4 +1,5 @@
 ActiveAdmin.register Restaurant do
+  menu parent: "Restaurants"
   index do
     column :name
     column :address
@@ -24,6 +25,12 @@ ActiveAdmin.register Restaurant do
       input :published
     end
     actions
+  end
+
+  controller do
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
   end
 
   show do
