@@ -17,7 +17,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Newest Restaurants" do
           ul do
             Restaurant.last(5).map do |restaurant|
-              li link_to(restaurant.title, admin_restaurant_path(restaurant))
+              li link_to(restaurant.name, admin_restaurant_path(restaurant))
             end
           end
         end
