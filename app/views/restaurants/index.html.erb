@@ -18,40 +18,20 @@
     <div class="row">
       <!-- SIDEBAR -->
       <aside class="col-md-4">
-
         <div class="property-search">
-          <form action="#" method="get">
-
-            <select>
-              <option>Location</option>
-              <option>Magsaysay</option>
-              <option>Panganiban</option>
-              <option>Del Rosario</option>
-            </select>
-            <select>
-              <option>Category</option>
-              <option>Japanese</option>
-              <option>Filipino</option>
-              <option>American</option>
-              <option>Chinese</option>
-            </select>
-            <select>
-              <option>Type</option>
-              <option>Buy</option>
-              <option>Sell</option>
-              <option>Rent</option>
-            </select>
-
+          <%= form_tag restaurants_path, method: 'get' do %>
+            <label>Address (e.g. Magsaysay)</label>
+            <%=text_field_tag :keyword, params[:keyword], class: 'form-control' %>
+            <br/>
+            <%=select_tag :category, options_for_select(category_options) %>
             <hr>
-
             <div class="buttons">
               <button class="btn btn-danger"><i class="fa fa-search"></i>Search</button>
               <button class="btn btn-clear">Clear</button>
             </div>
 
-          </form>
+          <% end %>
         </div>
-
       </aside>
       <!-- SIDEBAR -->
 
@@ -78,7 +58,6 @@
                           <span class="place"><i class="fa fa-map-marker"></i><%=restaurant.address%></span>
                         </div>
                         <div class="right">
-                          <span class="area">distance</span>
                           <span class="price">‎<%=restaurant.price_range%></span>
                         </div>
                       </div>

@@ -37,4 +37,11 @@ class Restaurant < ApplicationRecord
   def primary_photo_url
     restaurant_photos.where(primary: true).first.photo.url
   end
+
+  def self.search(params)
+    restaurants = Restaurant.published
+    restaurants = restaurants.where("LOWER(address) LIKE (?)", "%#{params[:keyword].downcase}%") if params[:keyword].present?
+    restaurants = restaurants.includes(:categories).where("LOWER(categories.title) = ?", 'params[:category].downcase') if params[:category].present? && !params[:category].eql?('category') 
+    restaurants
+  end
 end

@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
   before_action :find_restaurant, only: :show
 
   def index
-    @restaurants = Restaurant.published.page(params[:page]).per(20)
+    @restaurants = Restaurant.search(params).page(params[:page]).per(20)
   end
 
   def show
