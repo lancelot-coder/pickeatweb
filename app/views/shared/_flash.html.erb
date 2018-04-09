@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-#{name == :notice ? 'success' : 'danger'}">
+          <p><%=msg.html_safe%></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% flash.discard %>

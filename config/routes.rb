@@ -7,11 +7,10 @@ Rails.application.routes.draw do
   get 'properties-single' => 'pages#properties-single', as: 'properties-single'
   get 'team' => 'pages#team', as: 'team'
   get 'team-single' => 'pages#team-single', as: 'team-single'
-  get 'contact' => 'pages#contact', as: 'contact'
   root to: "home#index"
 
   devise_for :users
 
   resources :restaurants
-
+  resources :contacts
 end
