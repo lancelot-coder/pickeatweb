@@ -17,7 +17,7 @@ if Restaurant.all.empty?
   end
 
   category = Category.find_by(title: 'filipino')
-  restaurant = Restaurant.create(
+  restaurant = Restaurant.create!(
     name: "Prime Food Enterprise",
     category_id: category.id,
     published: true,
@@ -34,7 +34,7 @@ if Restaurant.all.empty?
 
   (0..3).each do |index|
     is_primary = index.zero? ? true : false
-    restaurant_photo = RestaurantPhoto.create(photo: URI.parse("https://picsum.photos/200/?random").open, primary: is_primary, restaurant_id: restaurant.id)
+    restaurant_photo = RestaurantPhoto.create!(photo: URI.parse("https://picsum.photos/200/?random").open, primary: is_primary, restaurant_id: restaurant.id)
     restaurant.restaurant_photos << restaurant_photo
   end
 
@@ -43,7 +43,7 @@ if Restaurant.all.empty?
     user = User.create(email: 'roanborja@gmail.com', password: 'password', password_confirmation: 'password', first_name: 'Roan', last_name: 'Borja')
   end
 
-  restaurant = Restaurant.create(
+  restaurant = Restaurant.create!(
     name: "Panira Eatery",
     category_id: category.id,
     published: true,
@@ -60,7 +60,7 @@ if Restaurant.all.empty?
 
   (0..3).each do |index|
     is_primary = index.zero? ? true : false
-    restaurant_photo = RestaurantPhoto.create(photo: URI.parse("https://picsum.photos/200/?random").open, primary: is_primary, restaurant_id: restaurant.id)
+    restaurant_photo = RestaurantPhoto.create!(photo: URI.parse("https://picsum.photos/200/?random").open, primary: is_primary, restaurant_id: restaurant.id)
     restaurant.restaurant_photos << restaurant_photo
   end
 
@@ -69,7 +69,7 @@ if Restaurant.all.empty?
     user = User.create(email: 'helenamilana@gmail.com', password: 'password', password_confirmation: 'password', first_name: 'Helen', last_name: 'Amilana')
   end
 
-  restaurant = Restaurant.create(
+  restaurant = Restaurant.create!(
     name: "Elio Kinalas",
     category_id: category.id,
     published: true,
@@ -86,7 +86,59 @@ if Restaurant.all.empty?
 
   (0..3).each do |index|
     is_primary = index.zero? ? true : false
-    restaurant_photo = RestaurantPhoto.create(photo: URI.parse("https://picsum.photos/200/?random").open, primary: is_primary, restaurant_id: restaurant.id)
+    restaurant_photo = RestaurantPhoto.create!(photo: URI.parse("https://picsum.photos/200/?random").open, primary: is_primary, restaurant_id: restaurant.id)
+    restaurant.restaurant_photos << restaurant_photo
+  end
+
+  user = User.where(email: 'joanadominguez@gmail.com').first
+  if user.nil?
+    user = User.create(email: 'joanadominguez@gmail.com', password: 'password', password_confirmation: 'password', first_name: 'Joana', last_name: 'Dominguez')
+  end
+
+  restaurant = Restaurant.create!(
+    name: "Jowandy Kinalas & Lutong Bahay",
+    category_id: category.id,
+    published: true,
+    street_address: "Dayangdang",
+    city: "Naga City",
+    zip: "4400",
+    province: "Camarines Sur",
+    country: "Philippines",
+    price_range: "PhP15.00 - PhP50.00",
+    phone: "09489535958",
+    open_hours: "8AM - 10PM",
+    user_id: user.id
+  )
+
+  (0..3).each do |index|
+    is_primary = index.zero? ? true : false
+    restaurant_photo = RestaurantPhoto.create!(photo: URI.parse("https://picsum.photos/200/?random").open, primary: is_primary, restaurant_id: restaurant.id)
+    restaurant.restaurant_photos << restaurant_photo
+  end
+
+  user = User.where(email: 'arielenciso@gmail.com').first
+  if user.nil?
+    user = User.create(email: 'arielenciso@gmail.com', password: 'password', password_confirmation: 'password', first_name: 'Ariel', last_name: 'Enciso')
+  end
+
+  restaurant = Restaurant.create!(
+    name: "Enciso Eatery",
+    category_id: category.id,
+    published: true,
+    street_address: "Hernandez Ave",
+    city: "Naga City",
+    zip: "4400",
+    province: "Camarines Sur",
+    country: "Philippines",
+    price_range: "PhP30.00 - PhP50.00",
+    phone: "09504652277",
+    open_hours: "8AM - 10PM",
+    user_id: user.id
+  )
+
+  (0..3).each do |index|
+    is_primary = index.zero? ? true : false
+    restaurant_photo = RestaurantPhoto.create!(photo: URI.parse("https://picsum.photos/200/?random").open, primary: is_primary, restaurant_id: restaurant.id)
     restaurant.restaurant_photos << restaurant_photo
   end
 end

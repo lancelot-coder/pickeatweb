@@ -1,15 +1,15 @@
 <h1 class="h1-main">Where to?</h1>
-<div class="carousel container-fluid" data-gap="20" data-bfc>
+<div class="carousel container-fluid" data-gap="80" data-bfc>
     <figure>
       <% @restaurants.each do |restaurant| %>
         <div class="container-fluid container-bg" id="square">
           <div class="row">
-            <div class="col-sm-5"><a href="<%=restaurant_path(restaurant)%>"><h1><%=restaurant.name%></h1></a></div>
-            <div class="col-sm-4"><h5><strong>OPEN HOURS: <%=restaurant.open_hours %></strong></h5></div>
-            <div class="col-sm-3"><h5><strong>PHONE: (054) 473 3333</strong></h5></div>
+            <div class="col-sm-5"><a href="<%=restaurant_path(restaurant)%>"><h3><%=restaurant.name%></h3></a></div>
+            <div class="col-sm-4"><h6><strong>OPEN HOURS: <%=restaurant.open_hours %></strong></h6></div>
+            <div class="col-sm-3"><h6><strong>PHONE: (054) 473 3333</strong></h6></div>
           </div>
           <div class="row">
-            <div class="col-sm-12"><h4><%=restaurant.address%></h4></div>
+            <div class="col-sm-12"><h5><%=restaurant.address%></h5></div>
           <div class="row">
           <div class="col-sm-7">
              <img src="<%=restaurant.primary_photo_url%>" class="img-responsive" alt="eateryimage">
