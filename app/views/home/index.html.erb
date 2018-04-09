@@ -40,8 +40,10 @@
               <span class="place"><i class="fa fa-map-marker"></i><%=restaurant.address%></span>
             </div>
               <div class="right">
-                  <span class="area">distance</span>
-                  <span class="price"><%=restaurant.name%></span>
+                <% if lat_lng.present? %>
+                  <span class="area"><%=number_to_human(restaurant.distance_from(lat_lng, :km), units: :distance, precision: 4)%></span>
+                <% end %>
+                <span class="price"><%=restaurant.name%></span>
               </div>
           </div>
         </div>
