@@ -47,7 +47,9 @@
               src="<%=static_map_for(@restaurant)%>" allowfullscreen>
             </iframe>
             <span class="location"><%=@restaurant.address%></span>
-            <span class="area">distance</span>
+            <% if lat_lng.present? %>
+              <span class="area">DISTANCE: <%=number_to_human(@restaurant.distance_from(lat_lng, :km), units: :distance, precision: 4)%></span>
+            <% end %>
           </div>
           <div class="prop-price">
               <strong class="price">‎<%=@restaurant.price_range%></strong>

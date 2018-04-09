@@ -58,6 +58,10 @@
                           <span class="place"><i class="fa fa-map-marker"></i><%=restaurant.address%></span>
                         </div>
                         <div class="right">
+                          <% if lat_lng.present? %>
+                            <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km), units: :distance, precision: 4)%></span>
+                          <% end %>
+                          <br><br>
                           <span class="price">‎<%=restaurant.price_range%></span>
                         </div>
                       </div>
