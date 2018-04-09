@@ -3,5 +3,4 @@ class HomeController < ApplicationController
     @restaurants = Restaurant.published.last(5)
   end
 
-
 end

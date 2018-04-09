@@ -36,8 +36,8 @@
         <% if user_signed_in? %>
         <div class="user">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <p>Username</p><span class="glyphicon glyphicon-user" style="font-size:20px;"></span>
-              <span class="drop-arow"></span>
+              <p><%= current_user.first_name %></p>
+              <span class="drop-arow"></span><i class="fa fa-caret-down" style="font-size:25px;"></i>
           </a>
             <ul class="dropdown-menu user-drop">
                 <li><%=link_to 'Edit Profile', edit_user_registration_path %></li>
@@ -47,7 +47,7 @@
         <% else %>
         <div class="user">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <p>Pick Me</p><span class="glyphicon glyphicon-user" style="font-size:20px;"></span>
+            <i class="fa fa-user-circle" style="font-size:25px;"></i>
             <span class="drop-arow"></span>
         </a>
             <ul class="dropdown-menu user-drop">
