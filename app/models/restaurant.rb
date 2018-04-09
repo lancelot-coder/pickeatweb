@@ -41,7 +41,7 @@ class Restaurant < ApplicationRecord
   def self.search(params)
     restaurants = Restaurant.published
     restaurants = restaurants.where("LOWER(address) LIKE (?)", "%#{params[:keyword].downcase}%") if params[:keyword].present?
-    restaurants = restaurants.includes(:categories).where("LOWER(categories.title) = ?", 'params[:category].downcase') if params[:category].present? && !params[:category].eql?('category') 
+    restaurants = restaurants.joins(:category).where("LOWER(categories.title) = ?", 'params[:category].downcase') if params[:category].present? && !params[:category].eql?('category') 
     restaurants
   end
 end

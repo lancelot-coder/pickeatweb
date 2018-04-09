@@ -23,7 +23,7 @@
             <label>Address (e.g. Magsaysay)</label>
             <%=text_field_tag :keyword, params[:keyword], class: 'form-control' %>
             <br/>
-            <%=select_tag :category, options_for_select(category_options) %>
+            <%=select_tag :category, options_for_select(category_options, params[:category]) %>
             <hr>
             <div class="buttons">
               <button class="btn btn-danger"><i class="fa fa-search"></i>Search</button>
