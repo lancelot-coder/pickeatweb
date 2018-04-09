@@ -4,7 +4,7 @@
       <% @restaurants.each do |restaurant| %>
         <div class="container-fluid container-bg" id="square">
           <div class="row">
-            <div class="col-sm-5"><h1><%=restaurant.name%></h1></div>
+            <div class="col-sm-5"><a href="<%=restaurant_path(restaurant)%>"><h1><%=restaurant.name%></h1></a></div>
             <div class="col-sm-4"><h5><strong>OPEN HOURS: <%=restaurant.open_hours %></strong></h5></div>
             <div class="col-sm-3"><h5><strong>PHONE: (054) 473 3333</strong></h5></div>
           </div>
@@ -12,12 +12,10 @@
             <div class="col-sm-12"><h4><%=restaurant.address%></h4></div>
           <div class="row">
           <div class="col-sm-7">
-             <img src="<%=restaurant.primary_photo_url%>" height="500" width="600"class="img-responsive" alt="eateryimage">
+             <img src="<%=restaurant.primary_photo_url%>" class="img-responsive" alt="eateryimage">
           </div>
           <div class="col-sm-5">
             <iframe
-                width="500px"
-                height="600px"
                 frameborder="0" style="border:0"
                 src="<%=static_map_for(restaurant)%>" class="img-responsive" allowfullscreen>
             </iframe>

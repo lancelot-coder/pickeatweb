@@ -20,29 +20,4 @@
 @import "template/style.css";
 @import "template/responsive.css";
 @import "font-awesome";
-
-a {
-  color: #FF0000;
-}
-
-.hover-link {
-a:hover {
-  color: #000;
-}
-}
-
-.form-control:focus {
-  border-color: #FF0000;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.9);
-}
-
-.btn-danger{
-  background-color: #EA4E3C;
-}
-
-.p-terms {
-  font-size: 12px;
-}
-.p-align {
-  text-align: center;
-}
+@import "global";

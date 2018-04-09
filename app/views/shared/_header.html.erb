@@ -33,23 +33,29 @@
         </ul>
     </nav>
 
-    <div class="user">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="<%=asset_url('logo.png')%>" alt="User Photo">
-            <span class="drop-arow"></span>
-        </a>
         <% if user_signed_in? %>
+        <div class="user">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <p>Username</p><span class="glyphicon glyphicon-user" style="font-size:20px;"></span>
+              <span class="drop-arow"></span>
+          </a>
             <ul class="dropdown-menu user-drop">
                 <li><%=link_to 'Edit Profile', edit_user_registration_path %></li>
                 <li><%=link_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }%></li>
             </ul>
+          </div>
         <% else %>
+        <div class="user">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <p>Pick Me</p><span class="glyphicon glyphicon-user" style="font-size:20px;"></span>
+            <span class="drop-arow"></span>
+        </a>
             <ul class="dropdown-menu user-drop">
                 <li><%=link_to 'Log In', new_user_session_path %></li>
                 <li><%=link_to 'Sign Up', new_user_registration_path%></li>
             </ul>
+        </div>
         <% end %>
-    </div>
 
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobile-menu" aria-expanded="false">
         <span class="icon-bar"></span>
