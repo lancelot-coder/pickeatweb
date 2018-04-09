@@ -29,7 +29,6 @@
                                 <div class="contact-form">
                                     <h3>Feedback</h3>
                                     <%=form_for @contact, url: contacts_path do |f| %>
-                                      <%=render 'shared/flash', flash: flash %>
                                       <input type="text" placeholder="Name" id="contact_name" name="contact[name]">
                                       <input type="text" placeholder="eMail" id="contact_email" name="contact[email]">
                                       <input type="text" placeholder="Phone" id="contact_phone" name="contact[phone]">

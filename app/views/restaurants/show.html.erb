@@ -29,7 +29,7 @@
         <figure>
           <img src="<%=@restaurant.primary_photo_url%>" alt="Image" class="img-responsive">
         </figure>
-        <div class="thumbnails">
+        <div class="thumbnails hidden-xs">
           <% @restaurant.restaurant_photos.not_primary.sample(3).each do |restaurant_photo| %>
             <img src="<%=restaurant_photo.photo.url%>" alt="Thumbnils" class="img-responsive">
           <% end %>
@@ -40,9 +40,14 @@
       <!-- RESTAURANT DATA -->
       <div class="col-md-5 property-data">
           <div class="prop-features prop-before">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d969.4039573205317!2d123.22179859304734!3d13.620259581527717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a18d2c267a6295%3A0xf9f875db20487ee1!2sLisam+Motor!5e0!3m2!1sen!2sph!4v1522650610580" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-              <span class="location"><%=@restaurant.address%></span>
-              <span class="area">distance</span>
+            <iframe
+              width="600"
+              height="450"
+              frameborder="0" style="border:0"
+              src="<%=static_map_for(@restaurant)%>" allowfullscreen>
+            </iframe>
+            <span class="location"><%=@restaurant.address%></span>
+            <span class="area">distance</span>
           </div>
           <div class="prop-price">
               <strong class="price">‎<%=@restaurant.price_range%></strong>

@@ -8,7 +8,8 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to contacts_path, notice: "Thank you for your feedback."
     else
-      render :back, error: 'Please provide your message.'
+      flash[:error] = 'Please provide your message.'
+      redirect_to contacts_path
     end
   end
 
