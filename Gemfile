@@ -22,8 +22,8 @@ gem 'activeadmin'
 gem 'kaminari'
 gem 'ratyrate'
 gem 'font-awesome-rails'
-gem 'active_skin'
 gem 'figaro'
+gem 'active_admin_theme'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

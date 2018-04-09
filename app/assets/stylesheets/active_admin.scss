@@ -10,11 +10,11 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
-$skinLogo: url("logo.png") no-repeat 0 0;
-$skinActiveColor: #f44336;
-$skinHeaderBck: #191919;
-$panelHeaderBck: #f44336;
-@import "active_skin";
+$skinMainFirstColor: #191919!default;
+$skinMainSecondColor: #EA4E3C!default;
+$skinBorderWindowColor: #B8BABE!default;
+@import "wigu/active_admin_theme";
+
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
