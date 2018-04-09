@@ -1,29 +1,75 @@
-<h2>Sign up</h2>
+<style>
+.form-width {
+  margin-top: 10px;
+  width: 300px;
+}
+.well-bg {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #FF0000;
+}
+.well-nbg {
+  margin-top: 10px;
+  background-color: none;
+}
+.p-terms {
+  font-size: 12px;
+}
+.p-align {
+  text-align: center;
+}
+</style>
+<div class="container form-width">
+      <h1 class="well-bg p-align"><strong>Log In to Pick Eat</strong></h1>
+      <p class="p-align"><strong>Where finding food matters</strong></p>
+      <p class="p-align">New to Pick Eat? <%= link_to "Sign up", new_user_registration_path %></p>
+      <p class="p-terms p-align">By logging in, you agree to Pick Eat’s <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+  	<div class="col-lg-12 well-nbg">
+  	<div class="row">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+              <div class="col-sm-12 ">
+                  <div class="form-group">
+                      <%= f.label :last_name %><br />
+                      <%= f.text_field :last_name, autofocus: true, :class => "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :first_name %><br />
+                      <%= f.text_field :first_name, autofocus: true, :class => "form-control" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :email %><br />
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
+                    </div>
+              <div class="form-group">
+                      <%= f.label :address %><br />
+                      <%= f.text_area :address, autofocus: true, :class => "form-control" %>
+                    </div>
+              <div class="form-group">
+                      <%= f.label :password %>
+                      <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> characters minimum)</em>
+                      <% end %><br />
+                      <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+                    </div>
+                      <div class="form-group">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+                      <%= f.label :password_confirmation %><br />
+                      <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+                    </div>
+                    <div class="form-group">
+                          <%= f.label :phone %><br />
+                          <%= f.text_field :phone, autofocus: true, :class => "form-control" %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+                    <div class=form-group"">
+                      <%= f.submit "Sign up", :class => "btn btn-md btn-danger" %>
+                    </div>
+                  <% end %>
+                  <br><br>
+                  <%= render "devise/shared/links" %>
+                  <br><br>
+                  </div>
+                </div>
+          	</div>
+          </div>

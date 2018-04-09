@@ -2,8 +2,7 @@
 <div class="top-bar">
 
     <p class="text">
-        <a><i class="fa fa-map-marker"></i> Naga City 4400 Camarines Sur Philippines</a>
-        <a href="tel:+61383766284"><i class="fa fa-phone"></i> + 613 8376 6284</a>
+      <span><i class="fa fa-map-marker"></i> Naga City 4400 Camarines Sur Philippines </span>
     </p>
 
     <p class="social">
@@ -41,6 +40,7 @@
         </a>
         <% if user_signed_in? %>
             <ul class="dropdown-menu user-drop">
+                <li><%=link_to 'Edit Profile', edit_user_registration_path %></li>
                 <li><%=link_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }%></li>
             </ul>
         <% else %>
