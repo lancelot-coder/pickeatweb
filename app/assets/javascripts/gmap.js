@@ -4,8 +4,8 @@ jQuery(document).ready(function($){
     var map;
 
     function initialize() {
-        var lat = '-37.817314';
-        var lng = '144.955431';
+        var lat = '13.6406072';
+        var lng = '123.1303774';
         var Latlng = new google.maps.LatLng(lat,lng);
         var mapOptions = {
             zoom: 18,

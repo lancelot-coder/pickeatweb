@@ -56,7 +56,6 @@
             <% if lat_lng.present? %>
               <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km), units: :distance, precision: 4)%></span>
             <% end %>
-            <div class="star-size">
               <h2 class="bold padding-bottom-7">3.3 <small>/ 5</small></h2>
     					<button type="button" class="btn btn-danger btn-sm" aria-label="Left Align">
     					  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -78,7 +77,6 @@
               <h5>Price Range:<h5> <h6><%=restaurant.price_range%></h6>
               <br><br>
               <h6>4 Reviews</h6>
-            </div>
           </div>
           </div>
         </div>

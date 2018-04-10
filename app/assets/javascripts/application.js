@@ -22,4 +22,5 @@
 //= require jquery.appear.js
 //= require custom.js
 //= require jquery.cycle2.js
-//= require pace.js
+//= require gmap.js
+//= require pace-loader
