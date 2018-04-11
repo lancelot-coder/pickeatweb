@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_restaurant, only: :show
   before_action :owner, only: :edit
 

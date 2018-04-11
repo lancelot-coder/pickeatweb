@@ -7,4 +7,5 @@ class User < ApplicationRecord
            true
          end
          has_many :reviews
+         
 end

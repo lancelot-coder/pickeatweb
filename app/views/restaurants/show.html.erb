@@ -53,14 +53,17 @@
           <div class="prop-price">
               <strong class="price">‎<%=@restaurant.price_range%></strong>
               <br><br>
+              <div class="pull-left">
+                <%=  hidden_field :user_id , :value => current_user.id %>
+                <% if (user_signed_in? && (current_user.id == @restaurant.user_id)) %>
+                <%= link_to "Edit your Eatery?", edit_restaurant_path(@restaurant), class: "btn btn-lg btn-danger" %>
+                <% end %>
+              </div>
+              <br><br><br>
               <% if user_signed_in? %>
               <%= render 'reviews/review' %>
               <% else %>
               <%= link_to "Add Review", new_user_session_path, :class => "btn btn-danger" %>
-              <% end %>
-              <%=  hidden_field :user_id , :value => current_user.id %>
-              <% if (user_signed_in? && (current_user.id == @restaurant.user_id)) %>
-              <%= link_to "Edit", edit_restaurant_path(@restaurant), class: "btn btn-md btn-danger" %>
               <% end %>
           </div>
       </div>
