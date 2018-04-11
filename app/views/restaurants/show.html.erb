@@ -9,7 +9,7 @@
           <span class="sep">/</span>
           <span class="current"><%=@restaurant.name%></span>
         </div>
-        <h2 class="page-title"><%=@restaurant.name%> 
+        <h2 class="page-title"><%=@restaurant.name%>
         <% if user_signed_in?%>
         <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h2>
         <% else %>
@@ -57,7 +57,10 @@
               <%= render 'reviews/review' %>
               <% else %>
               <%= link_to "Add Review", new_user_session_path, :class => "btn btn-danger" %>
-
+              <% end %>
+              <%=  hidden_field :user_id , :value => current_user.id %>
+              <% if (user_signed_in? && (current_user.id == @restaurant.user_id)) %>
+              <%= link_to "Edit", edit_restaurant_path(@restaurant), class: "btn btn-md btn-danger" %>
               <% end %>
           </div>
       </div>

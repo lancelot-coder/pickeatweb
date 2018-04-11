@@ -20,8 +20,14 @@ ActiveAdmin.register_page "Dashboard" do
               li link_to(restaurant.name, admin_restaurant_path(restaurant))
             end
           end
+        panel "Newest Reviews" do
+          ul do
+            Review.last(5).map do |review|
+            end
+          end
         end
       end
+    end
 
     #   column do
     #     panel "Info" do
