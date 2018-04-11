@@ -9,7 +9,12 @@
           <span class="sep">/</span>
           <span class="current"><%=@restaurant.name%></span>
         </div>
-        <h2 class="page-title"><%=@restaurant.name%></h2>
+        <h2 class="page-title"><%=@restaurant.name%> 
+        <% if user_signed_in?%>
+        <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h2>
+        <% else %>
+        <h6>Not yet claimed!</h6>
+        <% end %>
         <h4><%=@restaurant.category.title%></h4>
       </div>
     </div>
@@ -47,7 +52,13 @@
           </div>
           <div class="prop-price">
               <strong class="price">‎<%=@restaurant.price_range%></strong>
-              <a href="" class="btn btn-danger">Add Review</a>
+              <br><br>
+              <% if user_signed_in? %>
+              <%= render 'reviews/review' %>
+              <% else %>
+              <%= link_to "Add Review", new_user_session_path, :class => "btn btn-danger" %>
+
+              <% end %>
           </div>
       </div>
       <!-- RESTAURANT DATA -->

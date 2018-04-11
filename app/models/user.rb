@@ -6,4 +6,5 @@ class User < ApplicationRecord
          def confirmation_required?
            true
          end
+         has_many :reviews
 end

@@ -34,9 +34,9 @@
       <% @restaurants.each do |restaurant| %>
         <div class="container-fluid container-bg" id="square">
           <div class="row">
-            <div class="col-sm-5"><a href="<%=restaurant_path(restaurant)%>"><h3><%=restaurant.name%></h3></a></div>
+            <div class="col-sm-5"><a href="<%=restaurant_path(restaurant)%>"><h3><%=restaurant.name%> <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h2></h3></a></div>
             <div class="col-sm-4"><h6><strong>OPEN HOURS: <%=restaurant.open_hours %></strong></h6></div>
-            <div class="col-sm-3"><h6><strong>PHONE: (054) 473 3333</strong></h6></div>
+            <div class="col-sm-3"><h6><strong>PHONE: <%=restaurant.phone%></strong></h6></div>
           </div>
           <div class="row">
             <div class="col-sm-12"><h5><%=restaurant.address%></h5></div>

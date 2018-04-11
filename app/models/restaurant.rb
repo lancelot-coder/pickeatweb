@@ -5,9 +5,10 @@ class Restaurant < ApplicationRecord
   belongs_to :category
   belongs_to :user
   has_many :restaurant_photos
+  has_many :reviews
 
   scope :published, -> { where(published: true) }
-  
+
   geocoded_by :address do |obj,results|
     obj.send :ensure_geocoding, results.first
   end
@@ -41,7 +42,7 @@ class Restaurant < ApplicationRecord
   def self.search(params)
     restaurants = Restaurant.published
     restaurants = restaurants.where("LOWER(address) LIKE (?)", "%#{params[:keyword].downcase}%") if params[:keyword].present?
-    restaurants = restaurants.joins(:category).where("LOWER(categories.title) = ?", 'params[:category].downcase') if params[:category].present? && !params[:category].eql?('category') 
+    restaurants = restaurants.joins(:category).where("LOWER(categories.title) = ?", 'params[:category].downcase') if params[:category].present? && !params[:category].eql?('category')
     restaurants
   end
 end
