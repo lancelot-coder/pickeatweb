@@ -23,3 +23,5 @@
 //= require custom.js
 //= require jquery.cycle2.js
 //= require pace-loader
+//= require jquery.raty
+//= require ratyrate

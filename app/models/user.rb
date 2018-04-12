@@ -8,4 +8,5 @@ class User < ApplicationRecord
          end
          has_many :reviews
          
+  ratyrate_rater   
 end

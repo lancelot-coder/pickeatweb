@@ -1,4 +1,6 @@
 class Restaurant < ApplicationRecord
+  ratyrate_rateable 'service'
+
   extend FriendlyId
   friendly_id :name, use: :slugged
 
