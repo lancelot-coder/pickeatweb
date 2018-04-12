@@ -20,7 +20,11 @@
           <tr>
             <td><%=image_tag photo.photo.url, width: 100, class: 'img-responsive' %></td>
             <td><%=photo.primary?%></td>
-            <td><%=link_to 'Delete', restaurant_restaurant_photo_path(@restaurant, photo), class: 'btn btn-warning', data: { confirm: "Are you sure you want to delete this photo?" }, method: :delete %></td>
+            <td>
+              <%=link_to 'Delete', restaurant_restaurant_photo_path(@restaurant, photo), class: 'btn btn-warning', data: { confirm: "Are you sure you want to delete this photo?" }, method: :delete %>
+              &nbsp;
+              <%=link_to 'Edit', edit_restaurant_restaurant_photo_path(@restaurant, photo), class: 'btn btn-danger' %>
+            </td>
           </tr>
         <% end %>
       </tbody>

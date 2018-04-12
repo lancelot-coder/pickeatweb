@@ -1,4 +1,9 @@
 <div class="form-group">
+  <% if f.object.photo.exists? %>
+    <br/>
+    <%=image_tag f.object.photo.url(:thumb), width: 100, class: 'img-responsive' %>
+    <br/>
+  <% end %>
   <%=f.label :photo %>
   <%=f.file_field :photo, accept:'image/*', class: 'form-control' %>
 </div>

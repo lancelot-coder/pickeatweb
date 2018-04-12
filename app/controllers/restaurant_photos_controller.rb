@@ -22,6 +22,20 @@ class RestaurantPhotosController < ApplicationController
     end
   end
 
+  def edit 
+  end
+
+  def update
+    @restaurant_photo.update_attributes(permitted_params)
+    if @restaurant_photo.valid?
+      flash.now[:success] = "Photo successfully updated"
+      render action: :edit
+    else
+      flash.now[:error] = @restaurant_photo.errors.full_messages.join(', ')
+      render action: :edit
+    end
+  end
+
   def destroy
     @restaurant_photo.destroy
     redirect_to restaurant_restaurant_photos_path(@restaurant)

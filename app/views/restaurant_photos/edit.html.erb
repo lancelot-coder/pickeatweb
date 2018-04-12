@@ -5,8 +5,8 @@
    <li class="breadcrumb-item active"> <%=link_to 'Photos', restaurant_restaurant_photos_path(@restaurant) %></li>
   </ol>
   <div class="row col-md-6 col-md-offset-3">
-    <h6 class="text-center"> New Photo </h6>
-    <%=form_for @restaurant_photo, url: restaurant_restaurant_photos_path do |f| %>
+    <h6 class="text-center"> Edit Photo </h6>
+    <%=form_for [@restaurant, @restaurant_photo] do |f| %>
       <%= render partial: 'form', locals: {f: f} %>
     <% end %>
   </div>
