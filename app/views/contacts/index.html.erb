@@ -1,125 +1,119 @@
 <body>
-
-        <div class="page-wrap">
-              <div class="page-wrap team-page">
-
-                  <!-- BREADCRUMBS-->
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-md-12">
-                              <div class="breadcrumbs">
-                                  <a href="<%= root_path%>">Home</a>
-                                  <span class="sep">/</span>
-                                  <span class="current">Contact Us</span>
-                              </div>
-                              <h2 class="page-title">Contact Us</h2>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- BREADCRUMBS -->
-
-                  <!-- TEAMS -->
-                  <div class="container team-posts">
-                      <div class="row">
-
-                          <div class="col-md-4">
-                              <div class="post clearfix">
-                                  <figure>
-                                      <a href="team-single"><img src="<%=asset_url('team1.png')%>" alt="Team" class="img-responsive" ></a>
-                                  </figure>
-                                  <article>
-                                      <span>Bachelor of Science in Information Technology</span>
-                                      <h3>John Harvey<br>Panganiban</h3>
-                                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-                                      <div class="agent-social">
-                                          <a href="#"><i class="fa fa-facebook"></i></a>
-                                          <a href="#"><i class="fa fa-twitter"></i></a>
-                                          <a href="#"><i class="fa fa-google-plus"></i></a>
-                                          <a href="#"><i class="fa fa-youtube"></i></a>
-                                      </div>
-                                  </article>
-                              </div>
-                          </div>
-                          <div class="col-md-4">
-                              <div class="post clearfix">
-                                  <figure>
-                                      <a href="#"><img src="<%=asset_url('team2.png')%>" alt="Team" class="img-responsive" ></a>
-                                  </figure>
-                                  <article>
-                                      <span>Bachelor of Science in Information Technology</span>
-                                      <h3>Kate Icon<br>Marcelo</h3>
-                                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-                                      <div class="agent-social">
-                                          <a href="#"><i class="fa fa-facebook"></i></a>
-                                          <a href="#"><i class="fa fa-twitter"></i></a>
-                                          <a href="#"><i class="fa fa-google-plus"></i></a>
-                                      </div>
-                                  </article>
-                              </div>
-                          </div>
-                          <div class="col-md-4">
-                              <div class="post clearfix">
-                                  <figure>
-                                      <a href="#"><img src="<%=asset_url('team3.png')%>" alt="Team" class="img-responsive" ></a>
-                                  </figure>
-                                  <article>
-                                      <span>Bachelor of Science in Information Technology</span>
-                                      <h3>Emman<br>Flores</h3>
-                                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-                                      <div class="agent-social">
-                                          <a href="#"><i class="fa fa-facebook"></i></a>
-                                          <a href="#"><i class="fa fa-twitter"></i></a>
-                                          <a href="#"><i class="fa fa-google-plus"></i></a>
-                                      </div>
-                                  </article>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- TEAMS -->
-      </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6 col-md-offset-8 col-sm-offset-6">
-                                <div class="contact-form">
-                                    <h3>Feedback</h3>
-                                    <%=form_for @contact, url: contacts_path do |f| %>
-                                      <input type="text" placeholder="Name" id="contact_name" name="contact[name]">
-                                      <input type="text" placeholder="eMail" id="contact_email" name="contact[email]">
-                                      <input type="text" placeholder="Phone" id="contact_phone" name="contact[phone]">
-                                      <input type="text" placeholder="Subject" id="contact_subject" name="contact[subject]">
-                                      <textarea placeholder="Message" id="contact_message" name="contact[message]"></textarea>
-                                      <input type="submit" class="btn btn-danger" value="Send Message">
-                                    <%end%>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            <!-- ADDRESS -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 address">
-                        <i class="fa fa-map-marker"></i>
-                        <span>Naga City 4400 Camarines Sur Philippines</span>
-                    </div>
-                    <div class="col-md-3 col-sm-3 address">
-                        <i class="fa fa-phone"></i>
-                        <span>+61 3 8376 6284</span>
-                    </div>
-                    <div class="col-md-3 col-sm-3 address">
-                        <i class="fa fa-envelope"></i>
-                        <span>pickeatdev@gmail.com</span>
-                    </div>
-                    <div class="col-md-3 col-sm-3 address">
-                        <i class="fa fa-skype"></i>
-                        <span>skype.pickeatapp</span>
-                    </div>
-                </div>
+  <div class="page-wrap">
+    <div class="page-wrap team-page">
+      <!-- BREADCRUMBS-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="breadcrumbs">
+              <a href="<%= root_path%>">Home</a>
+              <span class="sep">/</span>
+              <span class="current">Contact Us</span>
             </div>
-            <!-- ADDRESS -->
-
+              <h2 class="page-title">Contact Us</h2>
+          </div>
         </div>
+      </div>
+      <!-- BREADCRUMBS -->
 
-    </body>
+      <!-- TEAMS -->
+      <div class="container team-posts">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="post clearfix">
+              <figure>
+                <a href="team-single"><img src="<%=asset_url('team1.png')%>" alt="Team" class="img-responsive" ></a>
+              </figure>
+              <article>
+                <span>Bachelor of Science in Information Technology</span>
+                <h3>John Harvey<br>Panganiban</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+              <div class="agent-social">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                  <a href="#"><i class="fa fa-youtube"></i></a>
+              </div>
+              </article>
+            </div>
+          </div>
+        <div class="col-md-4">
+          <div class="post clearfix">
+            <figure>
+              <a href="#"><img src="<%=asset_url('team2.png')%>" alt="Team" class="img-responsive" ></a>
+            </figure>
+              <article>
+                <span>Bachelor of Science in Information Technology</span>
+                <h3>Kate Icon<br>Marcelo</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                <div class="agent-social">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="post clearfix">
+              <figure>
+                <a href="#"><img src="<%=asset_url('team3.png')%>" alt="Team" class="img-responsive" ></a>
+              </figure>
+              <article>
+                  <span>Bachelor of Science in Information Technology</span>
+                  <h3>Emman<br>Flores</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                <div class="agent-social">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+              </article>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- TEAMS -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6 col-md-offset-8 col-sm-offset-6">
+          <div class="contact-form">
+            <h3>Feedback</h3>
+              <%=form_for @contact, url: contacts_path do |f| %>
+                <input type="text" placeholder="Name" id="contact_name" name="contact[name]">
+                <input type="text" placeholder="eMail" id="contact_email" name="contact[email]">
+                <input type="text" placeholder="Phone" id="contact_phone" name="contact[phone]">
+                <input type="text" placeholder="Subject" id="contact_subject" name="contact[subject]">
+                <textarea placeholder="Message" id="contact_message" name="contact[message]"></textarea>
+                <input type="submit" class="btn btn-danger" value="Send Message">
+              <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ADDRESS -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3 address">
+          <i class="fa fa-map-marker"></i>
+          <span>Naga City 4400 Camarines Sur Philippines</span>
+        </div>
+        <div class="col-md-3 col-sm-3 address">
+          <i class="fa fa-phone"></i>
+          <span>+61 3 8376 6284</span>
+        </div>
+        <div class="col-md-3 col-sm-3 address">
+          <i class="fa fa-envelope"></i>
+          <span>pickeatdev@gmail.com</span>
+        </div>
+        <div class="col-md-3 col-sm-3 address">
+          <i class="fa fa-skype"></i>
+          <span>skype.pickeatapp</span>
+        </div>
+      </div>
+    </div>
+    <!-- ADDRESS -->
+</body>

@@ -3,22 +3,21 @@
 <div class="facts_wrap animated">
   <div class="container">
     <div class="row">
-        <div class="col-md-12">
-          <ul class="clearfix row">
-              <li class="counter col-md-12 col-sm-12">
-                <div>
-                  <figure><img src="<%=asset_url('fact1.png')%>" alt=""></figure>
-                  <small>Eateries</small>
-                  <span data-fact="<%=@restaurants.size%>"><%=@restaurants.size%></span>
-                </div>
-              </li>
-          </ul>
-        </div>
+      <div class="col-md-12">
+        <ul class="clearfix row">
+          <li class="counter col-md-12 col-sm-12">
+            <div>
+              <figure><img src="<%=asset_url('fact1.png')%>" alt=""></figure>
+              <small>Eateries</small>
+              <span data-fact="<%=@restaurants.size%>"><%=@restaurants.size%></span>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 <!-- FACTS -->
-
 <!-- ITEMS GRID -->
 <div class="container">
   <h3>Latest Eatery</h3>
@@ -29,7 +28,8 @@
         <div class="item">
           <div class="item-header clearfix">
             <h3><a href="#"><%=restaurant.name%></a></h3>
-            <button type="button" class="btn btn-danger btn-sm pull-right" style="padding: 5px 5px;font-size: 5px;border-radius: 5px;">
+            <button type="button" class="btn btn-danger btn-sm pull-right"
+            style="padding: 5px 5px;font-size: 5px;border-radius: 5px;">
               <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
             </button>
             <h6 class="pull-right">3.0</h6>
@@ -44,12 +44,17 @@
             <div class="left">
               <span class="place"><i class="fa fa-map-marker"></i><%=restaurant.address%></span>
             </div>
-              <div class="right">
-                <% if lat_lng.present? %>
-                  <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km), units: :distance, precision: 4)%></span>
-                <% end %>
-                <span class="price"><%=restaurant.name%> <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
-              </div>
+            <div class="right">
+              <% if lat_lng.present? %>
+              <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km),
+              units:
+              :distance,
+              precision: 4)%>
+              </span>
+              <% end %>
+              <span class="price"><%=restaurant.name%> <i class="fa fa-check-circle"
+                style="color:#EA4E3C;font-size:10px;"></i></h2></span>
+            </div>
           </div>
         </div>
       </div>
@@ -57,9 +62,7 @@
   </div>
 </div>
 <!-- ITEMS GRID -->
-
 <hr style="border-top: 2px solid #ff6666;">
-
 <!-- REVIEWS -->
 <div class="full-width rewiews">
   <div class="container">
@@ -69,17 +72,20 @@
       <div class="col-md-4 col-sm-4">
         <img src="<%=asset_url('logo.png')%>" alt="Avatar" class="img-responsive">
         <h6>Roland Ramos</h6>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient...</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+          ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient...</p>
       </div>
       <div class="col-md-4 col-sm-4">
         <img src="<%=asset_url('logo.png')%>" alt="Avatar" class="img-responsive">
         <h6>Denmark Ng</h6>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient...</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+          ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient...</p>
       </div>
       <div class="col-md-4 col-sm-4">
         <img src="<%=asset_url('logo.png')%>" alt="Avatar" class="img-responsive">
         <h6>Kristian Sarate</h6>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient...</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+          ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient...</p>
       </div>
     </div>
   </div>

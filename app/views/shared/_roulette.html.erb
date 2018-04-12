@@ -7,7 +7,6 @@
   transition: .5s ease;
   backface-visibility: hidden;
 }
-
 .middleho {
   transition: .5s ease;
   opacity: 0;
@@ -18,49 +17,51 @@
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
-
 .containerho:hover .imageho {
   opacity: 0.3;
 }
-
 .containerho:hover .middleho {
   opacity: 1;
 }
-
 </style>
 <h1 class="h1-main">Where to?</h1>
 <div class="carousel container-fluid" data-gap="80" data-bfc>
-    <figure>
-      <% @restaurants.each do |restaurant| %>
-        <div class="container-fluid container-bg" id="square">
-          <div class="row">
-            <div class="col-sm-5"><a href="<%=restaurant_path(restaurant)%>"><h3><%=restaurant.name%> <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h2></h3></a></div>
-            <div class="col-sm-4"><h6><strong>OPEN HOURS: <%=restaurant.open_hours %></strong></h6></div>
-            <div class="col-sm-3"><h6><strong>PHONE: <%=restaurant.phone%></strong></h6></div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12"><h5><%=restaurant.address%></h5></div>
-          <div class="row">
-          <div class="col-sm-7 containerho">
-              <img src="<%=restaurant.primary_photo_url%>" class="imageho img-responsive" alt="eateryimage">
-              <div class="middleho">
-                  <a href="<%=restaurant_path(restaurant)%>" class="btn btn-danger">Pick Me</a>
-                </div>
-          </div>
-          <div class="col-sm-5">
-            <iframe
-                frameborder="0" style="border:0"
-                src="<%=static_map_for(restaurant)%>" class="img-responsive" allowfullscreen>
-            </iframe>
+  <figure>
+    <% @restaurants.each do |restaurant| %>
+    <div class="container-fluid container-bg" id="square">
+      <div class="row">
+        <div class="col-sm-5"><a href="<%=restaurant_path(restaurant)%>"><h3><%=restaurant.name%>
+        <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h2></h3></a></div>
+        <div class="col-sm-4"><h6><strong>OPEN HOURS: <%=restaurant.open_hours %></strong></h6></div>
+        <div class="col-sm-3"><h6><strong>PHONE: <%=restaurant.phone%></strong></h6></div>
+      </div>
+    <div class="row">
+        <div class="col-sm-12"><h5><%=restaurant.address%></h5></div>
+        <div class="row">
+        <div class="col-sm-7 containerho">
+          <img src="<%=restaurant.primary_photo_url%>" class="imageho img-responsive" alt="eateryimage">
+            <div class="middleho">
+              <a href="<%=restaurant_path(restaurant)%>" class="btn btn-danger">Pick Me</a>
+            </div>
+        </div>
+        <div class="col-sm-5">
+          <iframe
+            frameborder="0" style="border:0"
+            src="<%=static_map_for(restaurant)%>" class="img-responsive" allowfullscreen>
+          </iframe>
             <br>
-            <% if lat_lng.present? %>
-              <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km), units: :distance, precision: 4)%></span>
-            <% end %>
-              <%=rating_for restaurant, 'service', disable_after_rate: true, imdb_avg: true%>
-              <br>
-              <h5>Price Range:<h5> <h6><%=restaurant.price_range%></h6>
-              <br><br>
-              <h6>4 Reviews</h6>
+          <% if lat_lng.present? %>
+            <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km),
+            units:
+            :distance,
+            precision: 4)%>
+          </span>
+          <% end %>
+          <%=rating_for restaurant, 'service', disable_after_rate: true, imdb_avg: true%>
+            <br>
+            <h5>Price Range:<h5> <h6><%=restaurant.price_range%></h6>
+            <br><br>
+            <h6>4 Reviews</h6>
           </div>
           </div>
         </div>
@@ -68,10 +69,9 @@
       <% end %>
     </figure>
     <nav>
-        <button class=" nav btn btn-danger next">Spin</button>
+      <button class=" nav btn btn-danger next">Spin</button>
     </nav>
 </div>
-
 <script>
 /*carousel*/
 window.addEventListener('load', () => {
@@ -151,6 +151,4 @@ function carousel(root) {
     }
 
 }
-
-
 </script>
