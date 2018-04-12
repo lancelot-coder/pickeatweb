@@ -131,7 +131,7 @@
 						</div>
 						<div class="col-sm-9">
 							<div class="review-block-rate">
-								<%=rating_for @restaurant, 'service' %>
+								<%=imdb_style_rating_for @restaurant, review.user %>
 							</div>
 							<div class="review-block-title"><%= review.comment_title %></div>
 							<div class="review-block-description"><%= review.comment %></div>
