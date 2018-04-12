@@ -44,6 +44,8 @@
 
       <div class="form-group">
         <%= f.submit "Submit", class: 'btn btn-danger' %>
+        &nbsp;
+        <%= link_to 'Edit Photos', restaurant_restaurant_photos_path(f.object), class: 'btn btn-danger' %>
       </div>
     <% end %>
   </div>

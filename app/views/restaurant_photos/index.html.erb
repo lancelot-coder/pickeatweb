@@ -1,0 +1,27 @@
+<div class="container">
+  <ol class="breadcrumb">
+   <li class="breadcrumb-item"> My Eatery </li>
+   <li class="breadcrumb-item active"> <%=link_to @restaurant.name, edit_restaurant_path(@restaurant) %></li>
+  </ol>
+  <div class="row col-md-6 col-md-offset-3">
+    <div class="pull-right">
+      <%=link_to 'Add Photo', new_restaurant_restaurant_photo_path, class: 'btn btn-danger' %>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Primary?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @restaurant_photos.each do |photo| %>
+          <tr>
+            <td><%=image_tag photo.photo.url, width: 100, class: 'img-responsive' %></td>
+            <td><%=photo.primary?%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
