@@ -20,7 +20,7 @@ ActiveAdmin.register Restaurant do
   filter :address
   filter :title
 
-  permit_params :name, :description, :category, :user, :phone, :published, :price_range, :open_hours, :street_address, :province, :city, :zip, :country
+  permit_params :name, :description, :category_id, :user_id, :phone, :published, :price_range, :open_hours, :street_address, :province, :city, :zip, :country
   
   form do |f|
     inputs 'Details' do
