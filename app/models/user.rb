@@ -6,7 +6,13 @@ class User < ApplicationRecord
          def confirmation_required?
            true
          end
-         has_many :reviews
+  
+  has_many :reviews
+  has_many :restaurants
          
-  ratyrate_rater   
+  ratyrate_rater  
+  
+  def has_eatery?
+    true if restaurants.count > 0
+  end
 end

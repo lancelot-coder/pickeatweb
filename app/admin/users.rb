@@ -9,6 +9,9 @@ ActiveAdmin.register User do
     column :last_name
     column :address
     column :phone
+    column :has_eatery do |resto|
+      resto.has_eatery?
+    end
     column :current_sign_in_at
     column :sign_in_count
     column :created_at
@@ -28,5 +31,4 @@ ActiveAdmin.register User do
     end
     f.actions
   end
-
 end
