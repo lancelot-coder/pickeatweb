@@ -51,9 +51,11 @@
                       precision: 4)%>
                     </span>
                     <% end %>
-                    <span class="price"><%=restaurant.price_range%>
                     <% if restaurant.claimed? %>
-                        <iclass="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
+                      <span class="price"><%=restaurant.price_range%>
+                      <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
+                    <% else %>
+                      <div class="price"><%=restaurant.price_range%></div>
                     <% end %>
                   </div>
                 </div>
