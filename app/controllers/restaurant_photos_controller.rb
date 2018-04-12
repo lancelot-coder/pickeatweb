@@ -1,5 +1,6 @@
 class RestaurantPhotosController < ApplicationController
   before_action :find_restaurant
+  before_action :find_restaurant_photo, only: %w(edit destroy update)
 
   def index
     @restaurant_photos = @restaurant.restaurant_photos.order('created_at DESC')
@@ -21,10 +22,19 @@ class RestaurantPhotosController < ApplicationController
     end
   end
 
+  def destroy
+    @restaurant_photo.destroy
+    redirect_to restaurant_restaurant_photos_path(@restaurant)
+  end
+
   private
 
   def find_restaurant
     @restaurant = Restaurant.friendly.find(params[:restaurant_id])
+  end
+
+  def find_restaurant_photo
+    @restaurant_photo = RestaurantPhoto.find(params[:id])
   end
 
   def permitted_params
