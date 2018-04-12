@@ -68,9 +68,11 @@
               </div>
               <br><br><br>
               <% if user_signed_in? %>
-              <%= render 'reviews/review' %>
+                <% if current_user.id != @restaurant.user_id %>
+                  <%= render 'reviews/review' %>
+                <% end %>
               <% else %>
-              <%= link_to "Add Review", new_user_session_path, :class => "btn btn-danger" %>
+                <%= link_to "Add Review", new_user_session_path, :class => "btn btn-danger" %>
               <% end %>
           </div>
       </div>
