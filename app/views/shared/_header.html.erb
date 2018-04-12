@@ -1,66 +1,60 @@
 <!-- TOP -->
 <div class="top-bar">
-
-    <p class="text">
-      <span><i class="fa fa-map-marker"></i> Naga City 4400 Camarines Sur Philippines </span>
-    </p>
-
-    <p class="social">
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-vimeo"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-skype"></i></a>
-    </p>
-
+  <p class="text">
+    <span><i class="fa fa-map-marker"></i> Naga City 4400 Camarines Sur Philippines </span>
+  </p>
+  <p class="social">
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-vimeo"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-skype"></i></a>
+  </p>
 </div>
 <!-- TOP -->
-
 <!-- HEADER -->
 <header class="clearfix">
-
-    <div class="logo">
-        <a href="<%=root_path%>"><img src="<%=asset_url('logo.png')%>" alt="PICK EAT">PICK EAT</a>
-    </div>
-
+  <div class="logo">
+    <a href="<%=root_path%>"><img src="<%=asset_url('logo.png')%>" alt="PICK EAT">PICK EAT</a>
+  </div>
     <nav class="navbar collapse" id="mobile-menu">
-        <ul class="nav navbar-nav">
-            <li><a href="<%= root_path %>">Home</a></li>
-            <li><a href="about">About Us</a></li>
-            <li><a href="<%= restaurants_path %>">Eatery</a></li>
-            <li><a href="<%= contacts_path %>">Contact Us</a></li>
-        </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="<%= root_path %>">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li><a href="<%= restaurants_path %>">Eatery</a></li>
+        <li><a href="<%= contacts_path %>">Contact Us</a></li>
+      </ul>
     </nav>
-
-        <% if user_signed_in? %>
-        <div class="user">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <p><%= current_user.first_name %></p>
-              <span class="drop-arow"></span><i class="fa fa-caret-down" style="font-size:25px;"></i>
-          </a>
-            <ul class="dropdown-menu user-drop">
-                <li><%=link_to 'Edit Profile', edit_user_registration_path %></li>
-                <li><%=link_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }%></li>
-            </ul>
-          </div>
-        <% else %>
-        <div class="user">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-user-circle" style="font-size:25px;"></i>
-            <span class="drop-arow"></span>
-        </a>
-            <ul class="dropdown-menu user-drop">
-                <li><%=link_to 'Log In', new_user_session_path %></li>
-                <li><%=link_to 'Sign Up', new_user_registration_path%></li>
-            </ul>
-        </div>
-        <% end %>
-
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobile-menu" aria-expanded="false">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+    <% if user_signed_in? %>
+    <div class="user">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <p><%= current_user.first_name %></p>
+        <span class="drop-arow"></span><i class="fa fa-caret-down"
+        style="font-size:25px;"></i>
+      </a>
+      <ul class="dropdown-menu user-drop">
+        <li><%=link_to 'Edit Profile', edit_user_registration_path %></li>
+        <li><%=link_to 'Logout', destroy_user_session_path, method: :delete,
+        data: { confirm: 'Are you sure?' }%></li>
+      </ul>
+    </div>
+    <% else %>
+    <div class="user">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-user-circle" style="font-size:25px;"></i>
+          <span class="drop-arow"></span>
+      </a>
+      <ul class="dropdown-menu user-drop">
+        <li><%=link_to 'Log In', new_user_session_path %></li>
+        <li><%=link_to 'Sign Up', new_user_registration_path%></li>
+      </ul>
+    </div>
+    <% end %>
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+    data-target="#mobile-menu" aria-expanded="false">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
     </button>
-
 </header>
 <!-- HEADER -->
