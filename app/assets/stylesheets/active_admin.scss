@@ -14,7 +14,16 @@ $skinMainFirstColor: #191919!default;
 $skinMainSecondColor: #EA4E3C!default;
 $skinBorderWindowColor: #B8BABE!default;
 @import "wigu/active_admin_theme";
-
+body.active_admin {
+  font-size: 15px;
+  background: #fffff0;
+}
+.index #active_admin_content #index_footer {
+  color: #fffff0;  // Hides the 'Download text'. Pagination links are styled on their own
+  a {
+    display: none; // Hides the CSV .. links
+  }
+}
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
