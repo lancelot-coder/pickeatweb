@@ -6,7 +6,6 @@
         <div class="form-group">
           <%= rating_for @restaurant, 'service' %>
           <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
-          <br><br><br>
           <%= f.label :comment_title %>
           <%= f.text_field :comment_title, :class => "form-control" %>
           <br>
