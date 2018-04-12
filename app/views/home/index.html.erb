@@ -28,11 +28,7 @@
         <div class="item">
           <div class="item-header clearfix">
             <h3><a href="#"><%=restaurant.name%></a></h3>
-            <button type="button" class="btn btn-danger btn-sm pull-right"
-            style="padding: 5px 5px;font-size: 5px;border-radius: 5px;">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </button>
-            <h6 class="pull-right">3.0</h6>
+            <%=rating_for restaurant, 'service' %>
           </div>
           <figure>
             <img src="<%=restaurant.primary_photo_url%>" alt="" class="img-responsive">
@@ -44,17 +40,14 @@
             <div class="left">
               <span class="place"><i class="fa fa-map-marker"></i><%=restaurant.address%></span>
             </div>
-            <div class="right">
-              <% if lat_lng.present? %>
-              <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km),
-              units:
-              :distance,
-              precision: 4)%>
-              </span>
-              <% end %>
-              <span class="price"><%=restaurant.name%> <i class="fa fa-check-circle"
-                style="color:#EA4E3C;font-size:10px;"></i></h2></span>
-            </div>
+              <div class="right">
+                <% if lat_lng.present? %>
+                  <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km), units: :distance, precision: 4)%></span>
+                <% end %>
+                <% if restaurant.claimed? %>
+                  <span class="price"><%=restaurant.name%> <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
+                <% end %>
+                </div>
           </div>
         </div>
       </div>
