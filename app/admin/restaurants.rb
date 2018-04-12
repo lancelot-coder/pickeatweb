@@ -35,7 +35,7 @@ ActiveAdmin.register Restaurant do
       input :price_range
       input :open_hours
       input :category
-      input :user
+      input :user, as: :select, collection: User.all.collect {|user| [user.email, user.id] }
       input :published
     end
     actions
