@@ -35,9 +35,9 @@
       <ul class="dropdown-menu user-drop">
         <li><%=link_to 'Edit Profile', edit_user_registration_path %></li>
         <% if current_user.has_eatery? %>
-          <li style="padding: 12px 25px; font-weight: bold;">Edit My Eateries</li>
+          <li style="padding: 12px 25px; font-weight: bold;">My Eateries</li>
           <% current_user.restaurants.each do |restaurant| %>
-            <li><%=link_to "#{restaurant.name}", edit_restaurant_path(restaurant) %></li>
+            <li><%=link_to "#{restaurant.name}", restaurant_path(restaurant) %></li>
           <% end %>
         <% end %>
         <div class="divider"></div>
