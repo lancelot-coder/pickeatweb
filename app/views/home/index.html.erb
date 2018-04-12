@@ -29,10 +29,7 @@
         <div class="item">
           <div class="item-header clearfix">
             <h3><a href="#"><%=restaurant.name%></a></h3>
-            <button type="button" class="btn btn-danger btn-sm pull-right" style="padding: 5px 5px;font-size: 5px;border-radius: 5px;">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </button>
-            <h6 class="pull-right">3.0</h6>
+            <%=rating_for restaurant, 'service' %>
           </div>
           <figure>
             <img src="<%=restaurant.primary_photo_url%>" alt="" class="img-responsive">
