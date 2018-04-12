@@ -23,38 +23,44 @@
   <h3>Latest Eatery</h3>
   <br>
   <div class="row">
-    <% @restaurants.each do |restaurant| %>
-      <div class="col-md-4 col-sm-6">
-        <div class="item">
-          <div class="item-header clearfix">
-            <h3><a href="#"><%=restaurant.name%></a></h3>
-            <%=rating_for restaurant, 'service' %>
-          </div>
-          <figure>
-            <img src="<%=restaurant.primary_photo_url%>" alt="" class="img-responsive">
-            <div class="overlay">
-              <a href="<%=restaurant_path(restaurant)%>" class="btn btn-detail">Detail</a>
-            </div>
-          </figure>
-          <div class="item-detail">
-            <div class="left">
-              <span class="place"><i class="fa fa-map-marker"></i><%=restaurant.address%></span>
-            </div>
-              <div class="right">
-                <% if lat_lng.present? %>
-                  <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km),
-                  units:
-                  :distance,
-                  precision: 4)%>
-                </span>
-                <% end %>
-                <% if restaurant.claimed? %>
-                  <span class="price"><%=restaurant.price_range%> <i
-                    class="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
-                <% end %>
+    <% @restaurants.in_groups_of(3).each do |restaurants| %>
+      <div class="row">
+        <%restaurants.each do |restaurant|%>
+          <% if restaurant.present? %>
+            <div class="col-md-4 col-sm-6">
+              <div class="item">
+                <div class="item-header clearfix">
+                  <h3><a href="#"><%=restaurant.name%></a></h3>
+                  <%=rating_for restaurant, 'service' %>
                 </div>
-          </div>
-        </div>
+                <figure>
+                  <img src="<%=restaurant.primary_photo_url%>" alt="" class="img-responsive">
+                  <div class="overlay">
+                    <a href="<%=restaurant_path(restaurant)%>" class="btn btn-detail">Detail</a>
+                  </div>
+                </figure>
+                <div class="item-detail">
+                  <div class="left">
+                    <span class="place"><i class="fa fa-map-marker"></i><%=restaurant.address%></span>
+                  </div>
+                  <div class="right">
+                    <% if lat_lng.present? %>
+                      <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km),
+                      units:
+                      :distance,
+                      precision: 4)%>
+                    </span>
+                    <% end %>
+                    <span class="price"><%=restaurant.price_range%>
+                    <% if restaurant.claimed? %>
+                        <iclass="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>
