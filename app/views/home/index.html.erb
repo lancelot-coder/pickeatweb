@@ -45,8 +45,10 @@
                 <% if lat_lng.present? %>
                   <span class="area">DISTANCE: <%=number_to_human(restaurant.distance_from(lat_lng, :km), units: :distance, precision: 4)%></span>
                 <% end %>
-                <span class="price"><%=restaurant.name%> <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
-              </div>
+                <% if restaurant.claimed? %>
+                  <span class="price"><%=restaurant.name%> <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
+                <% end %>
+                </div>
           </div>
         </div>
       </div>
