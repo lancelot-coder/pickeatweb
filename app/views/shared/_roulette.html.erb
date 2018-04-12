@@ -27,7 +27,7 @@
 <h1 class="h1-main">Where to?</h1>
 <div class="carousel container-fluid" data-gap="80" data-bfc>
   <figure>
-    <% @restaurants.each do |restaurant| %>
+    <% @random_eateries.each do |restaurant| %>
     <div class="container-fluid container-bg" id="square">
       <div class="row">
         <div class="col-sm-5"><a href="<%=restaurant_path(restaurant)%>"><h3><%=restaurant.name%>
