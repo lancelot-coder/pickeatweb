@@ -21,4 +21,8 @@ module RestaurantsHelper
     rate = Rate.where(rateable: restaurant, rater_id: user.id).first
     rate.present? ? rate.stars : 0
   end
+
+  def overall_rating_per_restaurant(restaurant, star)
+    Rate.where(rateable: restaurant, stars: star).size
+  end
 end
