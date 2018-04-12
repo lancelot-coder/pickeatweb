@@ -2,10 +2,16 @@ ActiveAdmin.register Restaurant do
   menu parent: "Restaurants"
   index do
     column :name
-    column :address
+    column :street_address
+    column :province
+    column :city
+    column :zip
+    column :country
     column :phone
     column :open_hours
     column :price_range
+    column :category
+    column :user
     column :published
     actions
   end
@@ -13,15 +19,21 @@ ActiveAdmin.register Restaurant do
   filter :address
   filter :title
 
-  permit_params :name, :address, :phone, :published, :price_range, :open_hours
+  permit_params :name, :phone, :published, :price_range, :open_hours, :street_address, :province, :city, :zip, :country
 
   form do |f|
     inputs 'Details' do
       input :name
-      input :address
+      input :street_address
+      input :province
+      input :city
+      input :zip
+      input :country, as: :select, collection: ActionView::Helpers::FormOptionsHelper::COUNTRIES, selected: "Philippines"
       input :phone
       input :price_range
       input :open_hours
+      input :category
+      input :user
       input :published
     end
     actions
@@ -36,10 +48,16 @@ ActiveAdmin.register Restaurant do
   show do
     attributes_table do
       row :name
-      row :address
+      row :street_address
+      row :province
+      row :city
+      row :zip
+      row :country
       row :phone
       row :price_range
       row :open_hours
+      row :category
+      row :user
       row :published
     end
   end
