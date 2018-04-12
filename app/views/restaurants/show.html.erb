@@ -11,9 +11,11 @@
         </div>
         <h2 class="page-title"><%=@restaurant.name%>
         <% if user_signed_in?%>
-        <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h2>
-        <% else %>
-        <h6>Not yet claimed!</h6>
+          <% if @restaurant.claimed? %>
+            <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h2>
+          <% else %>
+            <a href="<%=contacts_path%>" class="btn btn-danger">Claim this Eatery</a>
+          <% end %>
         <% end %>
         <h4><%=@restaurant.category.title%></h4>
       </div>

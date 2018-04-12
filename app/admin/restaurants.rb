@@ -7,6 +7,7 @@ ActiveAdmin.register Restaurant do
     column :city
     column :zip
     column :country
+    column :description
     column :phone
     column :open_hours
     column :price_range
@@ -19,8 +20,8 @@ ActiveAdmin.register Restaurant do
   filter :address
   filter :title
 
-  permit_params :name, :phone, :published, :price_range, :open_hours, :street_address, :province, :city, :zip, :country
-
+  permit_params :name, :description, :category, :user, :phone, :published, :price_range, :open_hours, :street_address, :province, :city, :zip, :country
+  
   form do |f|
     inputs 'Details' do
       input :name
@@ -29,6 +30,7 @@ ActiveAdmin.register Restaurant do
       input :city
       input :zip
       input :country, as: :select, collection: ActionView::Helpers::FormOptionsHelper::COUNTRIES, selected: "Philippines"
+      input :description
       input :phone
       input :price_range
       input :open_hours
@@ -53,6 +55,7 @@ ActiveAdmin.register Restaurant do
       row :city
       row :zip
       row :country
+      row :description
       row :phone
       row :price_range
       row :open_hours
