@@ -76,10 +76,9 @@
 </div>
 <script>
 /*carousel*/
+var carousels;
 window.addEventListener('load', () => {
-    var
-        carousels = document.querySelectorAll('.carousel')
-    ;
+        carousels = document.querySelectorAll('.carousel');
 
     for (var i = 0; i < carousels.length; i++) {
         carousel(carousels[i]);
@@ -121,7 +120,7 @@ function carousel(root) {
         }
         if (bfc)
             for (i = 0; i < n; i++)
-                 images[i].style.backfaceVisibility = 'hidden';
+                images[i].style.backfaceVisibility = 'hidden';
 
         rotateCarousel(currImage);
     }
@@ -137,7 +136,9 @@ function carousel(root) {
                 return;
 
             if (t.classList.contains('next')) {
-                currImage++;
+                console.log(carousels.length);
+                var randomnumber=Math.floor(Math.random()*1000)
+                currImage = currImage + randomnumber;
             }
             else {
                 currImage--;
