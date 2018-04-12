@@ -20,6 +20,8 @@
       <aside class="col-md-4">
         <div class="property-search">
           <%= form_tag restaurants_path, method: 'get' do %>
+            <label>Name (e.g. Kinalas)</label>
+            <%=text_field_tag :name, params[:name], class: 'form-control' %>
             <label>Address (e.g. Magsaysay)</label>
             <%=text_field_tag :keyword, params[:keyword], class: 'form-control' %>
             <br/>

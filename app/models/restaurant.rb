@@ -4,7 +4,7 @@ class Restaurant < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  belongs_to :category, optional: true
+  belongs_to :category
   belongs_to :user, optional: true
   has_many :restaurant_photos
   has_many :reviews
@@ -38,11 +38,12 @@ class Restaurant < ApplicationRecord
   end
 
   def primary_photo_url
-    restaurant_photos.where(primary: true).first.photo.url
+    restaurant_photos.where(primary: true).try(:first).try(:photo).try(:url)
   end
 
   def self.search(params)
     restaurants = Restaurant.published
+    restaurants = restaurants.where("LOWER(name) LIKE (?)", "%#{params[:name].downcase}%") if params[:name].present?
     restaurants = restaurants.where("LOWER(address) LIKE (?)", "%#{params[:keyword].downcase}%") if params[:keyword].present?
     restaurants = restaurants.joins(:category).where("LOWER(categories.title) = ?", 'params[:category].downcase') if params[:category].present? && !params[:category].eql?('category')
     restaurants
