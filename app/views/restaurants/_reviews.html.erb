@@ -142,7 +142,9 @@
 							</div>
 							<div class="col-sm-9">
 								<div class="review-block-rate">
-									<%=imdb_style_rating_for @restaurant, review.user %>
+									<% (0..rating_per_user(review.restaurant, review.user)).each do %>
+										<%=image_tag 'star-on.png'%>
+									<% end %>
 								</div>
 								<div class="review-block-title"><%= review.comment_title %></div>
 								<div class="review-block-description"><%= review.comment %></div>

@@ -4,9 +4,7 @@
       <%= form_for Review.new do |f| %>
         <label for="rate">Rating:</label>
         <div class="form-group">
-          <% if !user_rated?(current_user, @restaurant) %>
-            <%= rating_for @restaurant, 'service' %>
-          <% end %>
+          <%= rating_for @restaurant, 'service', disable_after_rate: true %>
           <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
           <%= f.label :comment_title %>
           <%= f.text_field :comment_title, :class => "form-control" %>

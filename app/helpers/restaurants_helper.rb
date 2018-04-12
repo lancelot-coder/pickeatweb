@@ -16,4 +16,9 @@ module RestaurantsHelper
     rate = Rate.find_by(rater: user, rateable: restaurant)
     true if rate.present?
   end
+
+  def rating_per_user(restaurant, user)
+    rate = Rate.where(rateable: restaurant, rater_id: user.id).first
+    rate.present? ? rate.stars : 0
+  end
 end
