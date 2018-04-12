@@ -2,8 +2,8 @@
 .imageho {
   opacity: 1;
   display: block;
-  width: 100%;
-  height: auto;
+  width: 75%;
+  height: 75%;
   transition: .5s ease;
   backface-visibility: hidden;
 }
@@ -30,8 +30,9 @@
     <% @random_eateries.each do |restaurant| %>
     <div class="container-fluid container-bg" id="square">
       <div class="row">
-        <div class="col-sm-5"><a href="<%=restaurant_path(restaurant)%>"><h3><%=restaurant.name%>
-        <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h2></h3></a></div>
+        <div class="col-sm-5"><h4><%=restaurant.name%>
+        <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h4></a>
+        </div>
         <div class="col-sm-4"><h6><strong>OPEN HOURS: <%=restaurant.open_hours %></strong></h6></div>
         <div class="col-sm-3"><h6><strong>PHONE: <%=restaurant.phone%></strong></h6></div>
       </div>
@@ -69,14 +70,17 @@
       <% end %>
     </figure>
     <nav>
+      <br><br><br><br><br>
       <button class=" nav btn btn-danger next">Spin</button>
     </nav>
 </div>
 <script>
 /*carousel*/
-var carousels;
 window.addEventListener('load', () => {
-    carousels = document.querySelectorAll('.carousel');
+    var
+        carousels = document.querySelectorAll('.carousel')
+    ;
+
     for (var i = 0; i < carousels.length; i++) {
         carousel(carousels[i]);
     }
@@ -117,7 +121,7 @@ function carousel(root) {
         }
         if (bfc)
             for (i = 0; i < n; i++)
-                images[i].style.backfaceVisibility = 'hidden';
+                 images[i].style.backfaceVisibility = 'hidden';
 
         rotateCarousel(currImage);
     }
@@ -133,9 +137,7 @@ function carousel(root) {
                 return;
 
             if (t.classList.contains('next')) {
-                console.log(carousels.length);
-                var randomnumber=Math.floor(Math.random()*8)
-                currImage = currImage + randomnumber;
+                currImage++;
             }
             else {
                 currImage--;
