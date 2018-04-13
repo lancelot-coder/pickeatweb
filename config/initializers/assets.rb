@@ -11,4 +11,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += ["template/bootstrap.min.css", "template/comment.css", "template/flexslider.css", "template/font-awesome.min.css", "template/green.css", "template/jquery-ui.css", "template/jquery.selectBox.css", "template/pace-minimal.css", "template/responsive.css", "template/style.css"]
+# Rails.application.config.assets.precompile += ["template/bootstrap.min.css", "template/comment.css", "template/flexslider.css", "template/font-awesome.min.css", "template/green.css", "template/jquery-ui.css", "template/jquery.selectBox.css", "template/pace-minimal.css", "template/responsive.css", "template/style.css"]
