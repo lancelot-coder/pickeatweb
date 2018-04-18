@@ -9,7 +9,7 @@ ActiveAdmin.register RestaurantPhoto do
 
   filter :restaurant
 
-  permit_params :photo, :restaurant, :primary
+  permit_params :photo, :restaurant_id, :primary
 
   form do |f|
     inputs 'Details' do
