@@ -39,8 +39,13 @@
             <div class="col-md-4 col-sm-6">
               <div class="item">
                 <div class="item-header clearfix">
-                  <h3><a href="#"><%=restaurant.name%></a></h3>
+                  <h3 class="font-resto"><%=restaurant.name%>
+                  <% if restaurant.claimed? %></h3>
                   <%=rating_for restaurant, 'service' %>
+                  <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
+                  <% else %>
+                  <%=rating_for restaurant, 'service' %>
+                  <% end %>
                 </div>
                 <figure>
                   <img src="<%=restaurant.primary_photo_url%>" alt="" class="img-responsive">
@@ -60,12 +65,7 @@
                       precision: 4)%>
                     </span>
                     <% end %>
-                    <% if restaurant.claimed? %>
-                      <span class="price"><%=restaurant.price_range%>
-                      <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
-                    <% else %>
                       <div class="price"><%=restaurant.price_range%></div>
-                    <% end %>
                   </div>
                 </div>
               </div>
