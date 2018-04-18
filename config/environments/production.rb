@@ -96,11 +96,10 @@ Rails.application.configure do
   config.action_mailer.default :charset => "utf-8"
   
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :user_name            => "pickeatdev@gmail.com",
-    :password             => "pickeatdev0318",
-    :authentication       => "plain",
-    :enable_starttls_auto => true
-  }
+      address:              'smtp.elasticemail.com',
+      port:                 2525,
+      user_name:            'pickeatdev@gmail.com',
+      password:             '0b6b0b26-1715-4e7a-a073-b7e64fc6e8a6',
+      authentication:       'plain',
+      enable_starttls_auto: true  }
 end
