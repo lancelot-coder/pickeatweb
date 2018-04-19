@@ -1,18 +1,21 @@
 <h1 class="h1-main">Where to?</h1>
-<div class="carousel container-fluid" data-gap="30">
+<div class="carousel container-fluid" data-gap="60" data-bfc>
   <figure>
     <% @random_eateries.each do |restaurant| %>
-    <div class="container-fluid container-bg clearfix" id="square">
-        <div class="col-sm-8 pull-left"><h4><%=restaurant.name%>
+    <div class="container-fluid container-bg" id="square">
+      <div class="row">
+        <div class="col-sm-6 pull-left"><h4><%=restaurant.name%>
           <% if restaurant.claimed? %>
           <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h4></a>
         </h4>
           <% else %>
-          <p style="font-size:10px"><i class="fa fa-times-circle" style="color:#EA4E3C;font-size:10px;"></i> Unclaimed yet!</p>
+          <h6 style="font-size:10px"><i class="fa fa-times-circle" style="color:#EA4E3C;font-size:20px;"></i> Unclaimed yet!</h6>
           <% end %>
         </div>
         <div class="col-sm-4 pull-right"><h6><strong>OPEN HOURS: <%=restaurant.open_hours %>
-          <br>PHONE: <%=restaurant.phone%></strong></h6></div>
+        <br>PHONE: <%=restaurant.phone%></strong></h6></div>
+      </div>
+    <div class="row">
         <div class="col-sm-12"><h5 class="font-add"><%=restaurant.address%></h5></div>
         <div class="row">
         <div class="col-sm-7 containerho">
@@ -35,11 +38,13 @@
           </span>
           <% end %>
           <%=rating_for restaurant, 'service', disable_after_rate: true %>
-            <h5>Price Range:<h5> <p style="font-size:10px"><%=restaurant.price_range%></p>
             <br>
+            <h5>Price Range:<h5> <h6><%=restaurant.price_range%></h6>
+            <br><br>
             <h6><%=restaurant.reviews.size%> Reviews</h6>
           </div>
           </div>
+        </div>
       </div>
       <% end %>
     </figure>
@@ -111,7 +116,7 @@ function carousel(root) {
 
             if (t.classList.contains('next')) {
                 console.log(carousels.length);
-                var randomnumber = Math.floor(Math.random()*255)
+                var randomnumber=Math.floor(Math.random()*16)
                 currImage = currImage + randomnumber;
             }
             else {
