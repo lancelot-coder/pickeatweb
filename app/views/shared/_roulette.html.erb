@@ -1,5 +1,5 @@
 <h1 class="h1-main">Where to?</h1>
-<div class="carousel container-fluid" data-gap="20" data-bfc>
+<div class="carousel container-fluid" data-gap="60" data-bfc>
   <figure>
     <% @random_eateries.each do |restaurant| %>
     <div class="container-fluid container-bg" id="square">
@@ -9,7 +9,7 @@
           <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:20px;"></i></h4></a>
         </h4>
           <% else %>
-          <h6 style="font-size:10px">Unclaimed yet!</h6>
+          <h6 style="font-size:10px"><i class="fa fa-times-circle" style="color:#EA4E3C;font-size:20px;"></i> Unclaimed yet!</h6>
           <% end %>
         </div>
         <div class="col-sm-4 pull-right"><h6><strong>OPEN HOURS: <%=restaurant.open_hours %>

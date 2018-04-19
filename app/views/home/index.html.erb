@@ -39,13 +39,15 @@
             <div class="col-md-4 col-sm-6">
               <div class="item">
                 <div class="item-header clearfix">
-                  <h3 class="font-resto"><%=restaurant.name%>
-                  <% if restaurant.claimed? %></h3>
-                  <%=rating_for restaurant, 'service' %>
-                  <i class="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></h2></span>
+                  <h3 class="font-resto"><%=restaurant.name%> </h3>
+                  <% if restaurant.claimed? %>
+                  <span><i class="fa fa-check-circle" style="color:#EA4E3C;font-size:10px;"></i></span>
                   <% else %>
-                  <%=rating_for restaurant, 'service' %>
+                  <span><i class="fa fa-times-circle" style="color:#EA4E3C;font-size:10px;"></i></span>
                   <% end %>
+                  <div class="pull-right">
+                    <%=rating_for restaurant, 'service' %>
+                  </div>
                 </div>
                 <figure>
                   <img src="<%=restaurant.primary_photo_url%>" alt="" class="img-responsive">
