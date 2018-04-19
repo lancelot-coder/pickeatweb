@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'team-single' => 'contacts#team-single', as: 'team-single'
   root to: "home#index"
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   resources :restaurants do
     resources :restaurant_photos

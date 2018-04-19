@@ -20,9 +20,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    current_password = params[:user].delete(:current_password)
+    if obj_params[:password].blank?
+      clean_up_password_params
+    end
+    current_user.update_attributes(obj_params)
+    respond_with resource, location: edit_user_registration_path
+  end
 
   # DELETE /resource
   # def destroy
@@ -59,4 +64,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+
+  def obj_params
+    params.require(:user).permit(
+      :id,
+      :first_name,
+      :last_name,
+      :email,
+      :password,
+      :password_confirmation,
+      :current_password,
+      :address,
+      :phone
+    )
+  end
+
+  def clean_up_password_params
+    params[:user].delete(:password)
+    params[:user].delete(:password_confirmation) if obj_params[:password_confirmation].blank?
+  end
 end
