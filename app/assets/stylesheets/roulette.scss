@@ -30,11 +30,10 @@
 
 // Carousel configuration parameters
 $item-width: 50%; // Now we can use percentages!
-$item-separation: 500px; // This now is set with Js
+$item-separation: 100px; // This now is set with Js
 $viewer-distance: 900px;
 
 .carousel {
-    padding: 20px;
 
     perspective: $viewer-distance;
     overflow: hidden;
@@ -59,7 +58,7 @@ $viewer-distance: 900px;
 
     }
     #square {
-        width: 100%;
+        width: auto;
         box-sizing: border-box;
         padding: 0 $item-separation / 2;
 
